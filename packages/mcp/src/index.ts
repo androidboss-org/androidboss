@@ -43,7 +43,7 @@ export const STDIO_MAX_BYTES = 128 * 1024 * 1024;
  * The same server for the user's own machine: the `androidboss` npm package (packages/cli).
  * Pages show its install commands only once `published` is true, i.e. it is on npm.
  */
-export const LOCAL_CLI = { package: 'androidboss', published: false } as const;
+export const LOCAL_CLI = { package: 'androidboss', published: true } as const;
 
 /** The largest request body the Worker reads: the biggest input plus JSON-RPC overhead. */
 export const MAX_REQUEST_BYTES = 6_000_000;
