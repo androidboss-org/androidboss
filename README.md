@@ -300,6 +300,10 @@ Bug reports, fixes and new tools are welcome.
 
 Data in `packages/data` comes from the update scripts in `packages/data/scripts`; change the script rather than editing the generated JSON by hand.
 
+### Releases
+
+Each release has a `vX.Y.Z` tag matching the version in `packages/cli/package.json`. Pushing the tag runs the [release workflow](.github/workflows/release.yml), which tests the project, creates a [GitHub Release](https://github.com/androidboss-org/androidboss/releases) with the package tarball, and publishes the CLI to [GitHub Packages](https://github.com/androidboss-org/androidboss/pkgs/npm/androidboss) as `@androidboss-org/androidboss`. The same version goes to [npmjs.com](https://www.npmjs.com/package/androidboss) as `androidboss`.
+
 ### Security
 
 Please don't report security problems in public issues. Use [private vulnerability reporting](https://github.com/androidboss-org/androidboss/security/advisories/new) instead.

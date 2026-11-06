@@ -1,0 +1,70 @@
+name: Release
+
+# Push a tag vX.Y.Z (matching packages/cli/package.json) to publish a release:
+# a GitHub Release with the package tarball, and the CLI on GitHub Packages as
+# @androidboss-org/androidboss. npmjs.com is published separately with 2FA.
+on:
+  push:
+    tags: ['v*.*.*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing tag to release, e.g. v0.1.0
+        required: true
+
+concurrency:
+  group: release-${{ inputs.tag || github.ref_name }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    env:
+      TAG: ${{ inputs.tag || github.ref_name }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ env.TAG }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          registry-url: https://npm.pkg.github.com
+          scope: '@androidboss-org'
+      - run: npm ci
+
+      - name: Check the tag matches the CLI version
+        run: |
+          VERSION=$(node -p "require('./packages/cli/package.json').version")
+          if [ "v$VERSION" != "$TAG" ]; then
+            echo "Tag $TAG doesn't match packages/cli/package.json version $VERSION" >&2
+            exit 1
+          fi
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Test
+        run: npm test
+
+      - name: Pack for the release
+        working-directory: packages/cli
+        run: npm pack
+
+      - name: Publish to GitHub Packages
+        working-directory: packages/cli
+        run: |
+          npm pkg set name=@androidboss-org/androidboss publishConfig.registry=https://npm.pkg.github.com
+          npm publish --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create the GitHub Release
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "packages/cli/androidboss-$VERSION.tgz" --clobber
+          else
+            gh release create "$TAG" "packages/cli/androidboss-$VERSION.tgz" --title "$TAG" --generate-notes --verify-tag
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
