@@ -12,8 +12,8 @@
     "@androidboss/mcp": "*"
   },
   "devDependencies": {
-    "@types/node": "24.19.2",
+    "@types/node": "26.6.6",
     "typescript": "6.0.3",
-    "wrangler": "4.156.1"
+    "wrangler": "4.157.0"
   }
 }
