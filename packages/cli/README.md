@@ -62,3 +62,7 @@ The hosted server at `https://androidboss.info/mcp` has the same tools with no i
 ## Licences
 
 MIT. The bundled packages keep their own licences, listed in `dist/THIRD-PARTY-LICENSES.txt`.
+
+## Not affiliated with Google
+
+AndroidBoss is an independent, free, non-commercial community project. It isn't affiliated with or endorsed by Google LLC. Android is a trademark of Google LLC; other names belong to their owners. See [Legal and trademarks](https://androidboss.info/legal/). Questions and ideas: [GitHub Discussions](https://github.com/androidboss-org/androidboss/discussions).

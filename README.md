@@ -14,7 +14,7 @@
 [![License: MIT](https://img.shields.io/github/license/androidboss-org/androidboss)](LICENSE)
 [![Node.js](https://img.shields.io/node/v/androidboss)](https://nodejs.org/)
 
-[Website](https://androidboss.info) · [MCP setup](https://androidboss.info/agents/mcp-server/) · [npm](https://www.npmjs.com/package/androidboss) · [Report a bug](https://github.com/androidboss-org/androidboss/issues/new)
+[Website](https://androidboss.info) · [MCP setup](https://androidboss.info/agents/mcp-server/) · [npm](https://www.npmjs.com/package/androidboss) · [Discussions](https://github.com/androidboss-org/androidboss/discussions) · [Report a bug](https://github.com/androidboss-org/androidboss/issues/new)
 
 </div>
 
@@ -31,6 +31,9 @@ The same tools are available three ways:
 | **Web tools** | [androidboss.info](https://androidboss.info/tools/) | Using them in a browser, with your input never leaving the page |
 
 Every tool's output is checked against the real toolchain before it ships: R8 and Google's `retrace`, Gradle, aapt2, Kotlin/Native, `swiftc` and the Android CLI.
+
+> [!NOTE]
+> AndroidBoss is an independent, free and non-commercial community project, made by developers for developers. It isn't affiliated with or endorsed by Google. See [Legal and trademarks](https://androidboss.info/legal/).
 
 ## Contents
 
@@ -291,7 +294,7 @@ CHECK_GRADLE=1 npm test -w @androidboss/core
 
 ## Contributing
 
-Bug reports, fixes and new tools are welcome.
+Bug reports, fixes and new tools are welcome. For questions, ideas and show-and-tell, use [GitHub Discussions](https://github.com/androidboss-org/androidboss/discussions).
 
 1. **Open an issue first** for anything bigger than a small fix, so we can agree on the approach. For a wrong result, include the input, the output you expected and the tool that produced it.
 2. **Keep tools deterministic and read-only.** The same input must give the same output, with no network calls.
@@ -315,6 +318,9 @@ If AndroidBoss saves you time:
 - ⭐ **Star the repository** so other Android developers can find it.
 - ☕ **Sponsor the work** with the **Sponsor** button at the top of the repository.
 - 🛠️ **Report a wrong result or send a fix.** Real-world inputs make the tools better.
+- 💬 **Share how you use it** in [Discussions](https://github.com/androidboss-org/androidboss/discussions).
+
+The project is non-commercial: no ads, no paid plans. Donations only help cover hosting and domains.
 
 ## Licence
 
@@ -322,4 +328,8 @@ If AndroidBoss saves you time:
 
 The CLI bundles third-party packages under their own licences, listed in `dist/THIRD-PARTY-LICENSES.txt` inside the npm package.
 
-Android is a trademark of Google LLC. Kotlin® is a trademark protected by the Kotlin Foundation. AndroidBoss is an independent project and is not affiliated with or endorsed by Google, JetBrains or the Kotlin Foundation.
+### Trademarks
+
+Android is a trademark of Google LLC. Google Play is a trademark of Google LLC. Apple, App Store, iOS, Swift and Xcode are trademarks of Apple Inc., registered in the U.S. and other countries and regions. Kotlin® is a trademark protected by the Kotlin Foundation. Gradle is a trademark of Gradle, Inc. Other names belong to their owners and are used only to say which products the tools work with.
+
+AndroidBoss is not affiliated with or endorsed by Google, Apple, JetBrains or the Kotlin Foundation, and uses none of their logos. If you own a trademark used here and have a concern, please [open an issue](https://github.com/androidboss-org/androidboss/issues/new): we'll reply within 7 days and, at your request, change the content, rename the project or take it offline, and transfer the domains to you free of charge. Details: [Legal and trademarks](https://androidboss.info/legal/).
