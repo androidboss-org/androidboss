@@ -56,6 +56,9 @@ jobs:
           else
             npm publish -w androidboss --access public
           fi
+        env:
+          # Shows the trusted-publishing (OIDC) exchange if publishing fails.
+          NPM_CONFIG_LOGLEVEL: verbose
 
       - name: Pack for the release
         working-directory: packages/cli
