@@ -1,8 +1,8 @@
 name: Release
 
-# Push a tag vX.Y.Z (matching packages/cli/package.json) to publish a release:
-# a GitHub Release with the package tarball, and the CLI on GitHub Packages as
-# @androidboss-org/androidboss. npmjs.com is published separately with 2FA.
+# Push a tag vX.Y.Z (matching packages/cli/package.json) to release:
+# the CLI is published to npmjs.com through npm trusted publishing (OIDC, no
+# stored token) with provenance, and a GitHub Release gets the package tarball.
 on:
   push:
     tags: ['v*.*.*']
@@ -19,8 +19,8 @@ jobs:
   release:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      packages: write
+      contents: write # create the GitHub Release
+      id-token: write # npm trusted publishing and provenance
     env:
       TAG: ${{ inputs.tag || github.ref_name }}
     steps:
@@ -31,8 +31,10 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: npm
-          registry-url: https://npm.pkg.github.com
-          scope: '@androidboss-org'
+          registry-url: https://registry.npmjs.org
+      # Trusted publishing needs npm 11.5.1 or newer; Node 24 ships with it.
+      - name: Check npm supports trusted publishing
+        run: node -e "const [a,b,c]=process.argv[1].split('.').map(Number); if (a<11||(a===11&&(b<5||(b===5&&c<1)))) { console.error('npm '+process.argv[1]+' is too old for trusted publishing'); process.exit(1) }" "$(npm -v)"
       - run: npm ci
 
       - name: Check the tag matches the CLI version
@@ -47,17 +49,17 @@ jobs:
       - name: Test
         run: npm test
 
+      - name: Publish to npm
+        run: |
+          if npm view "androidboss@$VERSION" version >/dev/null 2>&1; then
+            echo "androidboss@$VERSION is already on npm; skipping."
+          else
+            npm publish -w androidboss --access public
+          fi
+
       - name: Pack for the release
         working-directory: packages/cli
-        run: npm pack
-
-      - name: Publish to GitHub Packages
-        working-directory: packages/cli
-        run: |
-          npm pkg set name=@androidboss-org/androidboss publishConfig.registry=https://npm.pkg.github.com
-          npm publish --ignore-scripts
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm pack --ignore-scripts
 
       - name: Create the GitHub Release
         run: |

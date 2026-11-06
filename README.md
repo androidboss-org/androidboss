@@ -302,7 +302,7 @@ Data in `packages/data` comes from the update scripts in `packages/data/scripts`
 
 ### Releases
 
-Each release has a `vX.Y.Z` tag matching the version in `packages/cli/package.json`. Pushing the tag runs the [release workflow](.github/workflows/release.yml), which tests the project, creates a [GitHub Release](https://github.com/androidboss-org/androidboss/releases) with the package tarball, and publishes the CLI to [GitHub Packages](https://github.com/androidboss-org/androidboss/pkgs/npm/androidboss) as `@androidboss-org/androidboss`. The same version goes to [npmjs.com](https://www.npmjs.com/package/androidboss) as `androidboss`.
+Each release has a `vX.Y.Z` tag matching the version in `packages/cli/package.json`. Pushing the tag runs the [release workflow](.github/workflows/release.yml), which tests the project, publishes the CLI to [npm](https://www.npmjs.com/package/androidboss) through [trusted publishing](https://docs.npmjs.com/trusted-publishers) with provenance (no stored tokens; npm shows which commit and workflow built it), and creates a [GitHub Release](https://github.com/androidboss-org/androidboss/releases) with the package tarball.
 
 ### Security
 
