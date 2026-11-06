@@ -1,0 +1,853 @@
+{
+  "statements": [
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.calendar",
+          "certificate": {
+            "sha256Fingerprint": "F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.googlequicksearchbox",
+          "certificate": {
+            "sha256Fingerprint": "F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.googlequicksearchbox",
+          "certificate": {
+            "sha256Fingerprint": "19:75:B2:F1:71:77:BC:89:A5:DF:F3:1F:9E:64:A6:CA:E2:81:A5:3D:C1:D1:D5:9B:1D:14:7F:E1:C8:2A:FA:00"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.travel.onthego",
+          "certificate": {
+            "sha256Fingerprint": "6B:64:82:FA:E6:76:B1:0A:93:7F:8A:38:ED:B4:AC:A6:85:16:78:74:20:FE:1C:C2:02:75:0F:56:F1:0E:BC:89"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.gms",
+          "certificate": {
+            "sha256Fingerprint": "F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.gms",
+          "certificate": {
+            "sha256Fingerprint": "19:75:B2:F1:71:77:BC:89:A5:DF:F3:1F:9E:64:A6:CA:E2:81:A5:3D:C1:D1:D5:9B:1D:14:7F:E1:C8:2A:FA:00"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.gms",
+          "certificate": {
+            "sha256Fingerprint": "7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.gms",
+          "certificate": {
+            "sha256Fingerprint": "D2:2C:C5:00:29:9F:B2:28:73:A0:1A:01:0D:E1:C8:2F:BE:4D:06:11:19:B9:48:14:DD:30:1D:AB:50:CB:76:78"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.gms",
+          "certificate": {
+            "sha256Fingerprint": "5F:23:91:27:7B:1D:BD:48:90:00:46:7E:4C:2F:A6:AF:80:24:30:08:04:57:DC:E2:F6:18:99:2E:9D:FB:54:02"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.gms",
+          "certificate": {
+            "sha256Fingerprint": "8F:D4:A0:E7:B8:EB:7C:72:6D:2D:AC:79:44:5B:2C:79:31:F6:2B:7E:B6:92:F5:04:4B:DC:FD:FA:AD:07:0A:36"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.navlite",
+          "certificate": {
+            "sha256Fingerprint": "B8:BE:71:A9:B5:2D:06:B9:8F:FE:55:BF:CA:C8:1D:AF:F8:89:00:06:2D:06:F3:4D:0F:F6:23:48:C8:2B:F5:8C"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.mapslite",
+          "certificate": {
+            "sha256Fingerprint": "68:F7:2B:28:2E:EC:EF:D5:5F:66:0B:88:E9:E2:97:96:D8:46:29:5D:2C:26:27:E8:00:C7:6E:33:13:71:05:EB"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.magazines",
+          "certificate": {
+            "sha256Fingerprint": "F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.whereismytrain.android",
+          "certificate": {
+            "sha256Fingerprint": "54:32:FE:58:62:E2:10:82:EB:8E:6C:DF:FE:BD:D3:B0:4A:27:D3:58:C0:4F:46:BE:46:F6:F2:6B:7F:71:C2:96"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.nbu.paisa.user",
+          "certificate": {
+            "sha256Fingerprint": "C1:7B:8E:3E:42:7B:FC:D9:9C:C6:5E:C2:4F:F5:3A:E9:17:42:42:92:D7:23:61:5B:74:63:64:68:E3:22:3C:0B"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.nbu.paisa.user.dev",
+          "certificate": {
+            "sha256Fingerprint": "AB:D1:C1:70:10:4F:24:7D:78:EE:3D:FA:BE:36:29:46:FD:50:4E:B2:D0:4F:B9:15:E8:84:B7:1A:14:08:74:6E"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.nbu.paisa.user.qa",
+          "certificate": {
+            "sha256Fingerprint": "C1:7B:8E:3E:42:7B:FC:D9:9C:C6:5E:C2:4F:F5:3A:E9:17:42:42:92:D7:23:61:5B:74:63:64:68:E3:22:3C:0B"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.nbu.paisa.user.teamfood2",
+          "certificate": {
+            "sha256Fingerprint": "A9:12:04:16:4E:37:90:22:A9:DF:1D:90:95:64:35:A4:87:A4:EB:18:BE:D4:C4:75:4A:CA:1D:F5:E9:B5:84:5B"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.tv.launcherx",
+          "certificate": {
+            "sha256Fingerprint": "52:02:F9:07:2A:0F:75:C8:31:B2:29:64:28:75:5D:F2:54:82:96:94:7D:11:80:4E:75:79:A9:34:A5:F7:00:AE"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.tv.launcherx",
+          "certificate": {
+            "sha256Fingerprint": "F5:3C:FA:BB:65:C6:F4:2D:3B:65:33:6C:98:1C:E8:AA:08:55:2E:8B:6C:7D:E6:B4:9E:75:B3:6D:09:EC:80:A6"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.tvrecommendations",
+          "certificate": {
+            "sha256Fingerprint": "B3:FB:D5:F1:57:30:8A:64:A1:E9:44:06:D2:35:35:CC:89:EB:0C:01:FA:5A:EB:98:CD:92:F1:C9:8A:FE:57:5C"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.tvrecommendations",
+          "certificate": {
+            "sha256Fingerprint": "71:0B:8A:3D:96:4D:E9:D4:7C:8A:BA:AF:9A:3C:E8:16:C8:02:9F:32:B6:E9:B4:AD:1D:A9:97:E0:39:FF:E5:EF"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.maps",
+          "certificate": {
+            "sha256Fingerprint": "19:75:B2:F1:71:77:BC:89:A5:DF:F3:1F:9E:64:A6:CA:E2:81:A5:3D:C1:D1:D5:9B:1D:14:7F:E1:C8:2A:FA:00"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.maps",
+          "certificate": {
+            "sha256Fingerprint": "F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.maps",
+          "certificate": {
+            "sha256Fingerprint": "3D:7A:12:23:01:9A:A3:9D:9E:A0:E3:43:6A:B7:C0:89:6B:FB:4F:B6:79:F4:DE:5F:E7:C2:3F:32:6C:8F:99:4A"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.gmm",
+          "certificate": {
+            "sha256Fingerprint": "19:75:B2:F1:71:77:BC:89:A5:DF:F3:1F:9E:64:A6:CA:E2:81:A5:3D:C1:D1:D5:9B:1D:14:7F:E1:C8:2A:FA:00"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.gmm",
+          "certificate": {
+            "sha256Fingerprint": "F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.gmm",
+          "certificate": {
+            "sha256Fingerprint": "3D:7A:12:23:01:9A:A3:9D:9E:A0:E3:43:6A:B7:C0:89:6B:FB:4F:B6:79:F4:DE:5F:E7:C2:3F:32:6C:8F:99:4A"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.gmm.fishfood",
+          "certificate": {
+            "sha256Fingerprint": "19:75:B2:F1:71:77:BC:89:A5:DF:F3:1F:9E:64:A6:CA:E2:81:A5:3D:C1:D1:D5:9B:1D:14:7F:E1:C8:2A:FA:00"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.gmm.fishfood",
+          "certificate": {
+            "sha256Fingerprint": "F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.gmm.fishfood",
+          "certificate": {
+            "sha256Fingerprint": "3D:7A:12:23:01:9A:A3:9D:9E:A0:E3:43:6A:B7:C0:89:6B:FB:4F:B6:79:F4:DE:5F:E7:C2:3F:32:6C:8F:99:4A"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.dynamite",
+          "certificate": {
+            "sha256Fingerprint": "CC:70:49:EB:F7:26:39:1F:DE:00:A9:53:D6:7E:79:E9:CD:72:C1:40:07:6C:D9:E3:DC:86:CA:A7:51:A9:DE:65"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.cultural",
+          "certificate": {
+            "sha256Fingerprint": "3D:7A:12:23:01:9A:A3:9D:9E:A0:E3:43:6A:B7:C0:89:6B:FB:4F:B6:79:F4:DE:5F:E7:C2:3F:32:6C:8F:99:4A"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.cultural",
+          "certificate": {
+            "sha256Fingerprint": "5A:AD:2B:EE:6D:B9:5D:17:E0:5A:08:D7:D1:E6:4C:10:A1:51:18:79:15:44:83:91:6B:6A:E6:C7:FD:9C:B0:C6"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.adm",
+          "certificate": {
+            "sha256Fingerprint": "F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.adm",
+          "certificate": {
+            "sha256Fingerprint": "19:75:B2:F1:71:77:BC:89:A5:DF:F3:1F:9E:64:A6:CA:E2:81:A5:3D:C1:D1:D5:9B:1D:14:7F:E1:C8:2A:FA:00"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.gm",
+          "certificate": {
+            "sha256Fingerprint": "F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.gm",
+          "certificate": {
+            "sha256Fingerprint": "19:75:B2:F1:71:77:BC:89:A5:DF:F3:1F:9E:64:A6:CA:E2:81:A5:3D:C1:D1:D5:9B:1D:14:7F:E1:C8:2A:FA:00"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.katniss",
+          "certificate": {
+            "sha256Fingerprint": "13:51:DE:D9:60:B5:D6:06:7E:83:9B:21:DF:C3:53:9B:5C:84:7A:15:01:C8:51:49:66:1F:49:88:35:00:6A:A0"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.katniss",
+          "certificate": {
+            "sha256Fingerprint": "4F:71:56:4D:6E:05:AD:F6:46:7E:7C:55:2E:FB:D8:61:8A:DF:D3:65:AC:E0:D6:53:B2:F2:3C:D3:C9:70:0F:10"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.searchlite",
+          "certificate": {
+            "sha256Fingerprint": "3D:7A:12:23:01:9A:A3:9D:9E:A0:E3:43:6A:B7:C0:89:6B:FB:4F:B6:79:F4:DE:5F:E7:C2:3F:32:6C:8F:99:4A"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.searchlite",
+          "certificate": {
+            "sha256Fingerprint": "5A:AD:2B:EE:6D:B9:5D:17:E0:5A:08:D7:D1:E6:4C:10:A1:51:18:79:15:44:83:91:6B:6A:E6:C7:FD:9C:B0:C6"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.classroom",
+          "certificate": {
+            "sha256Fingerprint": "7D:92:53:76:A4:C2:50:43:9C:57:95:1C:15:77:7C:DF:57:F2:84:02:88:CB:41:9E:46:E2:29:1E:55:D8:01:47"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.classroom",
+          "certificate": {
+            "sha256Fingerprint": "2C:89:89:DD:AA:D2:D0:83:53:E9:31:AE:E0:1D:1A:89:2D:90:61:F3:23:4F:44:E0:0D:0A:84:8F:EE:0C:BD:7C"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.tycho",
+          "certificate": {
+            "sha256Fingerprint": "B9:CF:CE:1C:47:A6:AC:71:34:42:71:8F:15:EF:55:B0:0B:3A:6D:1A:6D:48:CB:46:24:9F:A8:EB:51:46:53:50"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.tycho",
+          "certificate": {
+            "sha256Fingerprint": "4C:36:AF:4A:5B:DA:D9:7C:1F:3D:8B:28:34:16:D2:44:49:6C:2A:C5:EA:FE:82:26:07:9E:F6:F6:76:FD:18:59"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.immersiveviewxr",
+          "certificate": {
+            "sha256Fingerprint": "21:FD:BB:AF:14:98:C0:EB:0D:8A:81:B8:DD:09:54:BA:79:0E:A9:B8:5C:B3:E1:F8:6C:61:D8:55:71:AB:AC:9D"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.immersiveviewxr",
+          "certificate": {
+            "sha256Fingerprint": "CA:C6:F3:C7:72:2B:69:A1:58:BB:5D:C3:75:92:86:73:E2:92:34:3F:6C:F9:C3:B7:1E:F2:5B:B2:E0:24:25:7A"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.gms.supervision",
+          "certificate": {
+            "sha256Fingerprint": "E6:FA:3B:83:99:77:95:D7:89:0F:1F:60:8C:A1:A7:C9:11:E0:68:5B:AF:23:0F:91:2C:F5:E4:8C:D3:A2:4E:1D"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.gms.supervision",
+          "certificate": {
+            "sha256Fingerprint": "84:CE:21:FA:4F:62:1E:83:8C:BC:8C:4D:2C:D6:01:0F:EC:19:AF:DC:B4:97:89:26:A3:F1:FD:37:A3:AE:16:76"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.internal.gstore.pos_gsr",
+          "certificate": {
+            "sha256Fingerprint": "56:E4:FC:63:A5:96:6D:40:EB:1C:EA:80:52:AA:10:13:DE:E1:CF:CB:03:39:88:BA:BB:D6:00:94:E9:7A:91:A2"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.android.apps.internal.gstore.pos_gsr",
+          "certificate": {
+            "sha256Fingerprint": "3B:DB:65:E4:C1:78:99:75:B8:66:E0:99:8B:8D:2E:78:96:C2:1B:6F:29:79:90:CD:10:5B:17:0D:50:8B:16:12"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "web": {
+          "site": "https://www.google.com."
+        }
+      },
+      "relation": "delegate_permission/common.handle_all_urls",
+      "target": {
+        "androidApp": {
+          "packageName": "com.google.corplogin.android",
+          "certificate": {
+            "sha256Fingerprint": "FD:18:FA:80:0D:D0:0C:0D:9D:77:24:32:8B:6D:49:5E:5C:BA:83:0F:43:A9:AD:23:2E:0D:1F:25:66:F7:F9:5B"
+          }
+        }
+      }
+    }
+  ],
+  "maxAge": "37371.440168359s"
+}

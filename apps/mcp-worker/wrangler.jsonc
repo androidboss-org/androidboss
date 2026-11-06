@@ -1,0 +1,10 @@
+// The AndroidBoss MCP server on Cloudflare Workers (Free plan): mcp.androidboss.org/mcp.
+// A per-IP rate-limit rule on the androidboss.org zone protects the free quota.
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "androidboss-mcp",
+  "compatibility_date": "2026-11-01",
+  "main": "./src/worker.ts",
+  "routes": [{ "pattern": "mcp.androidboss.org", "custom_domain": true }],
+  "workers_dev": false
+}

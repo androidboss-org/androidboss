@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name" translatable="false">Shop</string>
+    <!-- Greeting on the home screen. %1$s is the user's first name. -->
+    <string name="greeting">Hello, %1$s! You\'re back.</string>
+    <string name="quoted">"It's   spaced"</string>
+    <string name="escapes">Line one\nTab\there \"quoted\" and a back\\slash</string>
+    <string name="entities">Tom &amp; Jerry &lt;3</string>
+    <string name="markup">Tap <b>Save</b> to keep <i>%1$d</i> items</string>
+    <string name="xliff">Order <xliff:g id="number" example="42">%1$d</xliff:g> shipped</string>
+    <string name="at_sign">\@handle</string>
+    <string name="collapse">  lots
+        of    space  </string>
+    <string name="unicode">Café</string>
+    <plurals name="items">
+        <item quantity="one">%d item</item>
+        <item quantity="other">%d items</item>
+    </plurals>
+    <string-array name="planets">
+        <item>Mercury</item>
+        <item>Venus</item>
+    </string-array>
+</resources>

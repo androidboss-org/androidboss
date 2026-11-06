@@ -1,0 +1,136 @@
+11-03 04:05:10.069 25668 25875 W libbinder.IPCThreadState: Sending oneway calls to frozen process.
+11-03 04:05:10.069 25668 25875 W libbinder.IPCThreadState: Sending oneway calls to frozen process.
+11-03 04:05:10.070 25668 25869 I HalDevMgr: bestIfaceCreationProposal is null, requestIface=STA, existingIface=[name=wlan0 type=STA]
+11-03 04:05:10.071 10067 10113 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+11-03 04:05:10.071 10067 10113 W libbinder.Binder: Large reply transaction of 1056768 bytes, interface descriptor , function: UNKNOWN_FUNCTION_NAME, code: 1, flags: 17
+11-03 04:05:10.071 25668 25875 D ConnectivityService: NetReassign [no changes] [c 1] [a 0] [i 0]
+11-03 04:05:10.071 10067 10116 I NearbyMediums: Wifi changed new SSID: "AndroidWifi"
+11-03 04:05:10.071 10067 10116 I NearbyMediums: WifiLanConnectivityInfo is not changed, skip notify.
+11-03 04:05:10.427 25668 25824 W InputDispatcher: Window 933ebdf dev.androidboss.anrdemo/dev.androidboss.anrdemo.MainActivity is unresponsive: 933ebdf dev.androidboss.anrdemo/dev.androidboss.anrdemo.MainActivity is not responding. Waited 5001ms for MotionEvent
+11-03 04:05:10.427 25668 25824 W InputDispatcher: Canceling events for 933ebdf dev.androidboss.anrdemo/dev.androidboss.anrdemo.MainActivity because it is unresponsive
+11-03 04:05:10.428 25668 25824 I WindowManager: ANR in Window{933ebdf u0 dev.androidboss.anrdemo/dev.androidboss.anrdemo.MainActivity}. Reason:Input dispatching timed out (933ebdf dev.androidboss.anrdemo/dev.androidboss.anrdemo.MainActivity is not responding. Waited 5001ms for MotionEvent).
+11-03 04:05:10.430 25668 19888 D ActivityManager: created ANR temporary file:/data/anr/temp_anr_1512633255097747778.txt
+11-03 04:05:10.430 25668 19888 I ActivityManager: Collecting stacks for pid 19849 into temporary file temp_anr_1512633255097747778.txt
+11-03 04:05:10.430 25668 25668 W AnrMainProcessD: type=1400 audit(0.0:754): avc:  denied  { read } for  name="transactions" dev="binder" ino=1048589 scontext=u:r:system_server:s0 tcontext=u:object_r:binderfs_logs_transactions:s0 tclass=file permissive=0
+11-03 04:05:10.435 25668 19889 I ActivityManager: dumpStackTraces pids={4037=true, 6405=true, 6458=true, 7607=true, 8829=true, 9320=true, 9340=true, 9526=true, 9610=true, 10067=true, 10138=true, 10316=true, 10533=true, 10715=true, 12861=true, 16102=true, 16350=true, 16510=true, 16676=true, 17547=true, 18626=true, 18833=true, 19294=true, 26091=true, 26115=true, 26124=true, 26145=true, 26341=true, 26588=true, 26621=true, 26641=true, 26671=true, 26748=true, 26799=true, 26903=true, 27149=true, 27167=true, 27194=true, 27334=true, 27360=true, 27387=true, 27401=true, 27426=true, 27501=true, 27586=true, 27719=true, 27774=true, 27805=true, 27840=true, 27867=true, 27888=true, 27897=true, 27917=true, 27951=true, 27982=true, 28017=true, 28041=true, 28071=true, 28084=true, 28096=true, 28131=true, 28154=true, 28195=true, 28232=true, 29448=true, 30178=true}
+11-03 04:05:10.435 25668 19889 I ActivityManager: Dumping to /data/anr/anr_2026-11-03-04-05-10-435
+11-03 04:05:10.447 25668 19888 E android.os.Debug: Failed to get binder state info for pid: 19849 status: -2: Success
+11-03 04:05:10.448 25668 19888 I system_server: libdebuggerd_client: started dumping process 19849
+11-03 04:05:10.449   343   343 I tombstoned: registered intercept for pid 19849 and type kDebuggerdJavaBacktrace
+11-03 04:05:10.449 19849 19852 I oidboss.anrdemo: Thread[2,tid=19852,WaitingInMainSignalCatcherLoop,Thread*=0xb40070efb20234b0,peer=0x21e8020,"Signal Catcher"]: reacting to signal 3
+11-03 04:05:10.449 19849 19852 I oidboss.anrdemo: 
+11-03 04:05:10.531   343   343 I tombstoned: received crash request for pid 19849
+11-03 04:05:10.531   343   343 I tombstoned: found intercept fd 512 for pid 19849 and type kDebuggerdJavaBacktrace
+11-03 04:05:10.532 19849 19852 I oidboss.anrdemo: Wrote stack traces to tombstoned
+11-03 04:05:10.532   343   343 W tombstoned: skipping tombstone file creation due to intercept
+11-03 04:05:10.532 25668 19888 I system_server: libdebuggerd_client: done dumping process 19849
+11-03 04:05:10.535 25668 19889 I ActivityManager: Collecting stacks for pid 25668
+11-03 04:05:10.534 25668 25668 W AnrConsumer: type=1400 audit(0.0:755): avc:  denied  { read } for  name="transactions" dev="binder" ino=1048589 scontext=u:r:system_server:s0 tcontext=u:object_r:binderfs_logs_transactions:s0 tclass=file permissive=0
+11-03 04:05:10.554 25668 19889 I system_server: libdebuggerd_client: started dumping process 25668
+11-03 04:05:10.555   343   343 I tombstoned: registered intercept for pid 25668 and type kDebuggerdJavaBacktrace
+11-03 04:05:10.555 25668 25674 I system_server: Thread[2,tid=25674,WaitingInMainSignalCatcherLoop,Thread*=0xb40070efb2005be0,peer=0x20070d8,"Signal Catcher"]: reacting to signal 3
+11-03 04:05:10.555 25668 25674 I system_server: 
+11-03 04:05:10.571 10067 10116 I NearbySharing: Network state changed: NetworkState(isRestricted=false, isOnline=true, isCongested=false, isMetered=false, isWifiConnected=true)
+11-03 04:05:10.584 25668 25755 E OomConnection: failed waiting for OOM events: java.lang.RuntimeException: listener failed waiting for OOM event
+11-03 04:05:10.642 25668 25899 E system_server: poll() failed: Interrupted system call, sleeping 100ms
+11-03 04:05:10.688 25668 15919 I HidlSensorManager: hidl_ssvc_poll: spurious wake up, back to work
+11-03 04:05:10.706 25668 19890 I ActivityManager: Skipping next CPU consuming process, not a java proc: 25668
+11-03 04:05:10.706 25668 19890 I ActivityManager: Skipping next CPU consuming process, not a java proc: 54
+11-03 04:05:10.706 25668 19890 I ActivityManager: Skipping next CPU consuming process, not a java proc: 19849
+11-03 04:05:10.706 25668 19890 I ActivityManager: Skipping next CPU consuming process, not a java proc: 90
+11-03 04:05:10.706 25668 19890 I ActivityManager: Skipping next CPU consuming process, not a java proc: 453
+11-03 04:05:10.806   343   343 I tombstoned: received crash request for pid 25668
+11-03 04:05:10.806   343   343 I tombstoned: found intercept fd 512 for pid 25668 and type kDebuggerdJavaBacktrace
+11-03 04:05:10.807 25668 25674 I system_server: Wrote stack traces to tombstoned
+11-03 04:05:10.807   343   343 W tombstoned: skipping tombstone file creation due to intercept
+11-03 04:05:10.807 25668 19889 I system_server: libdebuggerd_client: done dumping process 25668
+11-03 04:05:10.809 25668 19889 I ActivityManager: Collecting stacks for pid 26552
+11-03 04:05:10.806 25668 25668 W AnrConsumer: type=1400 audit(0.0:756): avc:  denied  { read } for  name="transactions" dev="binder" ino=1048589 scontext=u:r:system_server:s0 tcontext=u:object_r:binderfs_logs_transactions:s0 tclass=file permissive=0
+11-03 04:05:10.818 25668 19889 E android.os.Debug: Failed to get binder state info for pid: 26552 status: -2: Success
+11-03 04:05:10.819 25668 19889 I system_server: libdebuggerd_client: started dumping process 26552
+11-03 04:05:10.819   343   343 I tombstoned: registered intercept for pid 26552 and type kDebuggerdJavaBacktrace
+11-03 04:05:10.820 26552 26553 I putmethod.latin: Thread[2,tid=26553,WaitingInMainSignalCatcherLoop,Thread*=0xb40070efb20234b0,peer=0x20011d0,"Signal Catcher"]: reacting to signal 3
+11-03 04:05:10.820 26552 26553 I putmethod.latin: 
+11-03 04:05:10.939   343   343 I tombstoned: received crash request for pid 26552
+11-03 04:05:10.939   343   343 I tombstoned: found intercept fd 512 for pid 26552 and type kDebuggerdJavaBacktrace
+11-03 04:05:10.939 26552 26553 I putmethod.latin: Wrote stack traces to tombstoned
+11-03 04:05:10.939   343   343 W tombstoned: skipping tombstone file creation due to intercept
+11-03 04:05:10.939 25668 19889 I system_server: libdebuggerd_client: done dumping process 26552
+11-03 04:05:10.941 25668 19889 I ActivityManager: Collecting stacks for pid 26721
+11-03 04:05:10.938 25668 25668 W AnrConsumer: type=1400 audit(0.0:757): avc:  denied  { read } for  name="transactions" dev="binder" ino=1048589 scontext=u:r:system_server:s0 tcontext=u:object_r:binderfs_logs_transactions:s0 tclass=file permissive=0
+11-03 04:05:10.950 25668 19889 E android.os.Debug: Failed to get binder state info for pid: 26721 status: -2: Success
+11-03 04:05:10.950 25668 19889 I system_server: libdebuggerd_client: started dumping process 26721
+11-03 04:05:10.951   343   343 I tombstoned: registered intercept for pid 26721 and type kDebuggerdJavaBacktrace
+11-03 04:05:10.951 26721 26760 I or.multidisplay: Thread[2,tid=26760,WaitingInMainSignalCatcherLoop,Thread*=0xb40070efb20234b0,peer=0x2000dc0,"Signal Catcher"]: reacting to signal 3
+11-03 04:05:10.951 26721 26760 I or.multidisplay: 
+11-03 04:05:10.975   343   343 I tombstoned: received crash request for pid 26721
+11-03 04:05:10.975   343   343 I tombstoned: found intercept fd 512 for pid 26721 and type kDebuggerdJavaBacktrace
+11-03 04:05:10.975 26721 26760 I or.multidisplay: Wrote stack traces to tombstoned
+11-03 04:05:10.975   343   343 W tombstoned: skipping tombstone file creation due to intercept
+11-03 04:05:10.975 25668 19889 I system_server: libdebuggerd_client: done dumping process 26721
+11-03 04:05:10.977 25668 19889 I ActivityManager: Collecting stacks for pid 26072
+11-03 04:05:10.974 25668 25668 W AnrConsumer: type=1400 audit(0.0:758): avc:  denied  { read } for  name="transactions" dev="binder" ino=1048589 scontext=u:r:system_server:s0 tcontext=u:object_r:binderfs_logs_transactions:s0 tclass=file permissive=0
+11-03 04:05:10.989 25668 19889 I system_server: libdebuggerd_client: started dumping process 26072
+11-03 04:05:10.989   343   343 I tombstoned: registered intercept for pid 26072 and type kDebuggerdJavaBacktrace
+11-03 04:05:10.989 26072 26078 I com.android.se: Thread[2,tid=26078,WaitingInMainSignalCatcherLoop,Thread*=0xb40070efb200e6f0,peer=0x2002260,"Signal Catcher"]: reacting to signal 3
+11-03 04:05:10.990 26072 26078 I com.android.se: 
+11-03 04:05:11.011   343   343 I tombstoned: received crash request for pid 26072
+11-03 04:05:11.011   343   343 I tombstoned: found intercept fd 512 for pid 26072 and type kDebuggerdJavaBacktrace
+11-03 04:05:11.011 26072 26078 I com.android.se: Wrote stack traces to tombstoned
+11-03 04:05:11.011 25668 19889 I system_server: libdebuggerd_client: done dumping process 26072
+11-03 04:05:11.011   343   343 W tombstoned: skipping tombstone file creation due to intercept
+11-03 04:05:11.013 25668 19889 I ActivityManager: Collecting stacks for pid 26075
+11-03 04:05:11.024 25668 19889 E android.os.Debug: Failed to get binder state info for pid: 26075 status: -2: Success
+11-03 04:05:11.024 25668 19889 I system_server: libdebuggerd_client: started dumping process 26075
+11-03 04:05:11.024   343   343 I tombstoned: registered intercept for pid 26075 and type kDebuggerdJavaBacktrace
+11-03 04:05:11.025 26075 26081 I m.android.phone: Thread[2,tid=26081,WaitingInMainSignalCatcherLoop,Thread*=0xb40070efb200e6f0,peer=0x2001ea8,"Signal Catcher"]: reacting to signal 3
+11-03 04:05:11.025 26075 26081 I m.android.phone: 
+11-03 04:05:11.062   343   343 I tombstoned: received crash request for pid 26075
+11-03 04:05:11.062   343   343 I tombstoned: found intercept fd 512 for pid 26075 and type kDebuggerdJavaBacktrace
+11-03 04:05:11.062 26075 26081 I m.android.phone: Wrote stack traces to tombstoned
+11-03 04:05:11.062   343   343 W tombstoned: skipping tombstone file creation due to intercept
+11-03 04:05:11.062 25668 19889 I system_server: libdebuggerd_client: done dumping process 26075
+11-03 04:05:11.064 25668 19889 I ActivityManager: Collecting stacks for pid 26020
+11-03 04:05:11.075 25668 19889 E android.os.Debug: Failed to get binder state info for pid: 26020 status: -2: Success
+11-03 04:05:11.075 25668 19889 I system_server: libdebuggerd_client: started dumping process 26020
+11-03 04:05:11.076   343   343 I tombstoned: registered intercept for pid 26020 and type kDebuggerdJavaBacktrace
+11-03 04:05:11.076 26020 26025 I rkstack.process: Thread[2,tid=26025,WaitingInMainSignalCatcherLoop,Thread*=0xb40070efb20234b0,peer=0x2002c70,"Signal Catcher"]: reacting to signal 3
+11-03 04:05:11.076 26020 26025 I rkstack.process: 
+11-03 04:05:11.103   343   343 I tombstoned: received crash request for pid 26020
+11-03 04:05:11.103   343   343 I tombstoned: found intercept fd 512 for pid 26020 and type kDebuggerdJavaBacktrace
+11-03 04:05:11.103 26020 26025 I rkstack.process: Wrote stack traces to tombstoned
+11-03 04:05:11.103   343   343 W tombstoned: skipping tombstone file creation due to intercept
+11-03 04:05:11.104 25668 19889 I system_server: libdebuggerd_client: done dumping process 26020
+11-03 04:05:11.105 25668 19889 I ActivityManager: Collecting stacks for pid 25973
+11-03 04:05:11.118 25668 19889 E android.os.Debug: Failed to get binder state info for pid: 25973 status: -2: Success
+11-03 04:05:11.119 25668 19889 I system_server: libdebuggerd_client: started dumping process 25973
+11-03 04:05:11.119   343   343 I tombstoned: registered intercept for pid 25973 and type kDebuggerdJavaBacktrace
+11-03 04:05:11.119 25973 25974 I ndroid.systemui: Thread[2,tid=25974,WaitingInMainSignalCatcherLoop,Thread*=0xb40070efb20234b0,peer=0x2002b68,"Signal Catcher"]: reacting to signal 3
+11-03 04:05:11.119 25973 25974 I ndroid.systemui: 
+11-03 04:05:11.204   343   343 I tombstoned: received crash request for pid 25973
+11-03 04:05:11.204   343   343 I tombstoned: found intercept fd 512 for pid 25973 and type kDebuggerdJavaBacktrace
+11-03 04:05:11.204 25973 25974 I ndroid.systemui: Wrote stack traces to tombstoned
+11-03 04:05:11.204   343   343 W tombstoned: skipping tombstone file creation due to intercept
+11-03 04:05:11.204 25668 19889 I system_server: libdebuggerd_client: done dumping process 25973
+11-03 04:05:11.207 25668 19889 I ActivityManager: dumpStackTraces nativepids=null
+11-03 04:05:11.207 25668 19889 I ActivityManager: dumpStackTraces extraPids=[]
+11-03 04:05:11.207 25668 19889 I ActivityManager: Done dumping
+11-03 04:05:11.209 25668 19889 E ActivityManager: ANR in dev.androidboss.anrdemo (dev.androidboss.anrdemo/.MainActivity)
+11-03 04:05:11.209 25668 19889 E ActivityManager: PID: 19849
+11-03 04:05:11.209 25668 19889 E ActivityManager: Reason: Input dispatching timed out (933ebdf dev.androidboss.anrdemo/dev.androidboss.anrdemo.MainActivity is not responding. Waited 5001ms for MotionEvent).
+11-03 04:05:11.209 25668 19889 E ActivityManager: Parent: dev.androidboss.anrdemo/.MainActivity
+11-03 04:05:11.209 25668 19889 E ActivityManager: ErrorId: d318e20b-40cc-4c92-82d9-d668cbdc7027
+11-03 04:05:11.209 25668 19889 E ActivityManager: Frozen: false
+11-03 04:05:11.209 25668 19889 E ActivityManager: Load: 0.07 / 0.21 / 0.28
+11-03 04:05:11.209 25668 19889 E ActivityManager: ----- Output from /proc/pressure/memory -----
+11-03 04:05:11.209 25668 19889 E ActivityManager: some avg10=0.05 avg60=0.04 avg300=0.00 total=2061725
+11-03 04:05:11.209 25668 19889 E ActivityManager: full avg10=0.05 avg60=0.04 avg300=0.00 total=1166118
+11-03 04:05:11.209 25668 19889 E ActivityManager: ----- End output from /proc/pressure/memory -----
+11-03 04:05:11.209 25668 19889 E ActivityManager: ----- Output from /proc/pressure/cpu -----
+11-03 04:05:11.209 25668 19889 E ActivityManager: some avg10=3.49 avg60=2.58 avg300=1.29 total=3907296124
+11-03 04:05:11.209 25668 19889 E ActivityManager: full avg10=0.00 avg60=0.00 avg300=0.00 total=0
+11-03 04:05:11.209 25668 19889 E ActivityManager: ----- End output from /proc/pressure/cpu -----
+11-03 04:05:11.209 25668 19889 E ActivityManager: ----- Output from /proc/pressure/io -----
+11-03 04:05:11.209 25668 19889 E ActivityManager: some avg10=0.61 avg60=0.58 avg300=0.15 total=211644841
+11-03 04:05:11.209 25668 19889 E ActivityManager: full avg10=0.17 avg60=0.16 avg300=0.04 total=103107974
+11-03 04:05:11.209 25668 19889 E ActivityManager: ----- End output from /proc/pressure/io -----

@@ -1,0 +1,27 @@
+{
+  "name": "@androidboss/data",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./tools": "./src/tools.ts",
+    "./permissions": "./src/permissions.ts",
+    "./target-sdk": "./src/target-sdk.ts",
+    "./plist-keys": "./src/plist-keys.ts",
+    "./prompt-recipes": "./src/prompt-recipes.ts",
+    "./official-skills": "./src/official-skills.ts",
+    "./kmp-libraries": "./src/kmp-libraries.ts",
+    "./privacy": "./src/privacy.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "check": "tsc --noEmit",
+    "test:gradle": "CHECK_GRADLE=1 vitest run src/kmp-libraries.gradle.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.5"
+  }
+}

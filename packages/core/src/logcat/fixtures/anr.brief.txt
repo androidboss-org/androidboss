@@ -1,0 +1,16 @@
+I/tombstoned(  343): found intercept fd 512 for pid 25973 and type kDebuggerdJavaBacktrace
+I/ndroid.systemui(25973): Wrote stack traces to tombstoned
+W/tombstoned(  343): skipping tombstone file creation due to intercept
+I/system_server(25668): libdebuggerd_client: done dumping process 25973
+I/ActivityManager(25668): dumpStackTraces nativepids=null
+I/ActivityManager(25668): dumpStackTraces extraPids=[]
+I/ActivityManager(25668): Done dumping
+E/ActivityManager(25668): ANR in dev.androidboss.anrdemo (dev.androidboss.anrdemo/.MainActivity)
+E/ActivityManager(25668): PID: 19849
+E/ActivityManager(25668): Reason: Input dispatching timed out (933ebdf dev.androidboss.anrdemo/dev.androidboss.anrdemo.MainActivity is not responding. Waited 5001ms for MotionEvent).
+E/ActivityManager(25668): Parent: dev.androidboss.anrdemo/.MainActivity
+E/ActivityManager(25668): ErrorId: d318e20b-40cc-4c92-82d9-d668cbdc7027
+E/ActivityManager(25668): Frozen: false
+E/ActivityManager(25668): Load: 0.07 / 0.21 / 0.28
+E/ActivityManager(25668): ----- Output from /proc/pressure/memory -----
+E/ActivityManager(25668): some avg10=0.05 avg60=0.04 avg300=0.00 total=2061725

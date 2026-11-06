@@ -1,0 +1,7 @@
+{
+  "maxAge": "599.999999870s",
+  "debugString": "********************* ERRORS *********************\n* Error: unavailable: Error fetching statements from https://example.com./.well-known/assetlinks.json (which is equivalent to 'https://example.com/.well-known/assetlinks.json'): 404 Not Found [1648] while fetching Web statements from https://example.com./.well-known/assetlinks.json (which is equivalent to 'https://example.com/.well-known/assetlinks.json') using download from the web (ID 1).\n",
+  "errorCode": [
+    "ERROR_CODE_FETCH_ERROR"
+  ]
+}

@@ -1,0 +1,7 @@
+java.lang.ArithmeticException: / by zero
+	at com.example.shop.Main.main(r8-map-id-fd20405202ce386c4d32a7e6c5583a0cfc1c70b2635199ba772106a3c20149e6:9)
+Exception in thread "main" java.lang.IllegalStateException: bad item 2
+	at a.b.a(r8-map-id-fd20405202ce386c4d32a7e6c5583a0cfc1c70b2635199ba772106a3c20149e6:1)
+	at com.example.shop.Main.a(r8-map-id-fd20405202ce386c4d32a7e6c5583a0cfc1c70b2635199ba772106a3c20149e6:1)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at com.example.shop.Main.main(r8-map-id-fd20405202ce386c4d32a7e6c5583a0cfc1c70b2635199ba772106a3c20149e6:13)

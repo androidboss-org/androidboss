@@ -1,0 +1,51 @@
+{
+  "name": "androidboss",
+  "version": "0.1.0",
+  "description": "Android and Kotlin Multiplatform tools from androidboss.info in your terminal, and as a local MCP server for coding agents.",
+  "license": "MIT",
+  "author": "AndroidBoss (https://androidboss.info/)",
+  "type": "module",
+  "bin": {
+    "androidboss": "dist/androidboss.mjs"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "homepage": "https://androidboss.info/agents/mcp-server/#run-locally",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/androidboss-org/androidboss.git",
+    "directory": "packages/cli"
+  },
+  "bugs": "https://github.com/androidboss-org/androidboss/issues",
+  "keywords": [
+    "android",
+    "kotlin",
+    "kotlin-multiplatform",
+    "kmp",
+    "mcp",
+    "r8",
+    "retrace",
+    "gradle"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && vitest run",
+    "check": "tsc --noEmit",
+    "prepublishOnly": "node scripts/build.mjs && vitest run"
+  },
+  "devDependencies": {
+    "@androidboss/mcp": "*",
+    "@modelcontextprotocol/client": "2.4.0",
+    "@modelcontextprotocol/server": "2.4.0",
+    "@types/node": "24.19.2",
+    "esbuild": "0.28.2",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
+  }
+}

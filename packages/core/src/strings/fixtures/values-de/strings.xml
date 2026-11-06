@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Laden</string>
+    <string name="greeting">Hallo, %1$d!</string>
+    <string name="markup">Tippe auf <b>Speichern</b>, um %1$d Artikel zu behalten</string>
+    <plurals name="items">
+        <item quantity="one">%d Artikel</item>
+        <item quantity="other">%d Artikel</item>
+    </plurals>
+    <string-array name="planets">
+        <item>Merkur</item>
+    </string-array>
+    <string name="old_key">Alt</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="greeting">Привет, %1$s!</string>
+    <plurals name="items">
+        <item quantity="one">%d товар</item>
+        <item quantity="other">%d товаров</item>
+    </plurals>
+</resources>

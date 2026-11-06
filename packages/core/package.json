@@ -1,0 +1,59 @@
+{
+  "name": "@androidboss/core",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Tool logic shared by androidboss.info, the MCP server and the CLI. Pure TypeScript, runs in browsers and Node.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./json-to-kotlin": "./src/json-to-kotlin/index.ts",
+    "./agents-md": "./src/agents-md/index.ts",
+    "./mcp-config": "./src/mcp-config/index.ts",
+    "./app-icon": "./src/app-icon/index.ts",
+    "./zip": "./src/zip/index.ts",
+    "./png": "./src/png/index.ts",
+    "./store-assets": "./src/store-assets/index.ts",
+    "./listing": "./src/listing/index.ts",
+    "./expect-actual": "./src/expect-actual/index.ts",
+    "./expect-actual/templates": "./src/expect-actual/templates.ts",
+    "./android-cli": "./src/android-cli/index.ts",
+    "./units": "./src/units/index.ts",
+    "./retrace": "./src/retrace/index.ts",
+    "./catalog": "./src/catalog/index.ts",
+    "./vector": "./src/vector/index.ts",
+    "./vector/fixtures": "./src/vector/fixtures.ts",
+    "./theme": "./src/theme/index.ts",
+    "./compat": "./src/compat/index.ts",
+    "./theme/variants": "./src/theme/variants.ts",
+    "./crash-prompt": "./src/crash-prompt/index.ts",
+    "./journeys": "./src/journeys/index.ts",
+    "./readiness": "./src/readiness/index.ts",
+    "./logcat": "./src/logcat/index.ts",
+    "./logcat/fixtures/*": "./src/logcat/fixtures/*",
+    "./strings": "./src/strings/index.ts",
+    "./strings/fixtures/*": "./src/strings/fixtures/*",
+    "./applinks": "./src/applinks/index.ts",
+    "./notification-icon": "./src/notification-icon/index.ts",
+    "./keep-rules": "./src/keep-rules/index.ts",
+    "./apk": "./src/apk/index.ts",
+    "./apk/fixtures/*": "./src/apk/fixtures/*",
+    "./swift-interop": "./src/swift-interop/index.ts",
+    "./swift-interop/samples": "./src/swift-interop/samples.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "check": "tsc --noEmit",
+    "test:cli": "CHECK_ANDROID_CLI=1 vitest run src/android-cli/cli.test.ts",
+    "test:kmp": "CHECK_KMP=1 vitest run src/expect-actual/expect-actual.gradle.test.ts src/swift-interop/swift-interop.kmp.test.ts",
+    "test:gradle": "CHECK_GRADLE=1 vitest run src/catalog/catalog.gradle.test.ts",
+    "test:android": "CHECK_ANDROID=1 vitest run src/vector/vector.android.test.ts src/theme/theme.android.test.ts src/strings/strings.android.test.ts src/keep-rules/keep-rules.r8.test.ts src/apk/apk.android.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.5"
+  },
+  "dependencies": {
+    "@material/material-color-utilities": "^0.4.0"
+  }
+}

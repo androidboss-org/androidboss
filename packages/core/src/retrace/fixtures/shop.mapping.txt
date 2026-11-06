@@ -1,0 +1,50 @@
+# compiler: R8
+# compiler_version: 9.4.14
+# common_typos_disable
+# {"id":"com.android.tools.r8.mapping","version":"2.2"}
+# pg_map_id: fd20405202ce386c4d32a7e6c5583a0cfc1c70b2635199ba772106a3c20149e6
+# pg_map_hash: SHA-256 fd20405202ce386c4d32a7e6c5583a0cfc1c70b2635199ba772106a3c20149e6
+com.example.shop.Cart -> a.a:
+# {"id":"sourceFile","fileName":"Cart.java"}
+    java.util.List items -> a
+      # {"id":"com.android.tools.r8.residualsignature","signature":"Ljava/util/ArrayList;"}
+    1:2:void <init>():6:7 -> <init>
+com.example.shop.Checkout -> a.b:
+# {"id":"sourceFile","fileName":"Checkout.java"}
+    1:1:void failInLambda(int):11:11 -> a
+com.example.shop.Item -> a.c:
+# {"id":"sourceFile","fileName":"Item.java"}
+    int qty -> a
+    1:1:void <init>(java.lang.String,int):6:6 -> <init>
+      # {"id":"com.android.tools.r8.residualsignature","signature":"(I)V"}
+com.example.shop.Main -> com.example.shop.Main:
+# {"id":"sourceFile","fileName":"Main.java"}
+    1:1:void lambda$main$0(com.example.shop.Cart,java.lang.Integer):16:16 -> a
+      # {"id":"com.android.tools.r8.residualsignature","signature":"(La/a;Ljava/lang/Integer;)V"}
+    1:2:void main(java.lang.String[]):7:8 -> main
+    3:3:void com.example.shop.Cart.add(com.example.shop.Item):8:8 -> main
+    3:3:void main(java.lang.String[]):8 -> main
+    4:4:void main(java.lang.String[]):9:9 -> main
+    5:5:void com.example.shop.Cart.add(com.example.shop.Item):8:8 -> main
+    5:5:void main(java.lang.String[]):9 -> main
+    6:6:int com.example.shop.Cart.total():11:11 -> main
+    6:6:void com.example.shop.Checkout.run():7 -> main
+      # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
+    6:6:void main(java.lang.String[]):11 -> main
+    7:7:int com.example.shop.Cart.total():11:11 -> main
+    7:7:void com.example.shop.Checkout.run():7 -> main
+    7:7:void main(java.lang.String[]):11 -> main
+    8:8:int com.example.shop.Item.unitPrice() -> main
+    8:8:int com.example.shop.Cart.priceOf(com.example.shop.Item):17 -> main
+      # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
+    8:8:int com.example.shop.Cart.total():12 -> main
+    8:8:void com.example.shop.Checkout.run():7 -> main
+    8:8:void main(java.lang.String[]):11 -> main
+    9:9:int com.example.shop.Item.unitPrice():8:8 -> main
+    9:9:int com.example.shop.Cart.priceOf(com.example.shop.Item):17 -> main
+    9:9:int com.example.shop.Cart.total():12 -> main
+    9:9:void com.example.shop.Checkout.run():7 -> main
+    9:9:void main(java.lang.String[]):11 -> main
+    10:10:void com.example.shop.Checkout.run():8:8 -> main
+    10:10:void main(java.lang.String[]):11 -> main
+    11:13:void main(java.lang.String[]):13:15 -> main
