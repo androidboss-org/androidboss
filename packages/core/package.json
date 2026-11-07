@@ -38,7 +38,8 @@
     "./apk": "./src/apk/index.ts",
     "./apk/fixtures/*": "./src/apk/fixtures/*",
     "./swift-interop": "./src/swift-interop/index.ts",
-    "./swift-interop/samples": "./src/swift-interop/samples.ts"
+    "./swift-interop/samples": "./src/swift-interop/samples.ts",
+    "./cheatsheets": "./src/cheatsheets/index.ts"
   },
   "scripts": {
     "test": "vitest run",
@@ -46,7 +47,8 @@
     "test:cli": "CHECK_ANDROID_CLI=1 vitest run src/android-cli/cli.test.ts",
     "test:kmp": "CHECK_KMP=1 vitest run src/expect-actual/expect-actual.gradle.test.ts src/swift-interop/swift-interop.kmp.test.ts",
     "test:gradle": "CHECK_GRADLE=1 vitest run src/catalog/catalog.gradle.test.ts",
-    "test:android": "CHECK_ANDROID=1 vitest run src/vector/vector.android.test.ts src/theme/theme.android.test.ts src/strings/strings.android.test.ts src/keep-rules/keep-rules.r8.test.ts src/apk/apk.android.test.ts"
+    "test:android": "CHECK_ANDROID=1 vitest run src/vector/vector.android.test.ts src/theme/theme.android.test.ts src/strings/strings.android.test.ts src/keep-rules/keep-rules.r8.test.ts src/apk/apk.android.test.ts",
+    "test:cheatsheets": "CHECK_ANDROID=1 CHECK_GRADLE=1 CHECK_ANDROID_CLI=1 vitest run src/cheatsheets"
   },
   "devDependencies": {
     "@types/node": "26.6.6",

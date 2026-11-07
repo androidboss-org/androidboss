@@ -84,6 +84,12 @@ describe('androidboss CLI', () => {
     expect(cli(['retarce']).code).toBe(2);
   });
 
+  it('looks up cheatsheet commands', () => {
+    const r = cli(['cheatsheet', '--sheet', 'adb', '--query', 'deep link', '--values.package', 'com.my.shop', '--values.url', 'https://shop.example/p/1']);
+    expect(r.code).toBe(0);
+    expect(r.out).toContain('adb shell am start -a android.intent.action.VIEW -d "https://shop.example/p/1"');
+  });
+
   it('prints help and version', () => {
     expect(cli([]).out).toContain('androidboss mcp');
     expect(cli(['help', 'kotlin-to-swift']).out).toContain('--kotlin <string>  (required)');

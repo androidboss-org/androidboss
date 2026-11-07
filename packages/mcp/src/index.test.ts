@@ -147,6 +147,19 @@ describe('AndroidBoss MCP server', () => {
     expect(r.text.toLowerCase()).toContain('edge-to-edge');
   });
 
+  it('finds cheatsheet commands and fills placeholders', async () => {
+    const r = await call('cheatsheet', { query: 'logs one app', values: { package: 'com.my.shop' } });
+    const entries = r.data.entries as { sheet: string; id: string; command: string; url: string }[];
+    expect(entries[0]!.id).toBe('logcat-app');
+    expect(entries[0]!.command).toContain('pidof -s com.my.shop');
+    expect(entries[0]!.url).toBe('https://androidboss.info/cheatsheets/adb/#logcat-app');
+    const gradle = (await call('cheatsheet', { sheet: 'gradle', query: 'unit tests', values: { module: 'core', variant: 'release' } })).data.entries as { command: string }[];
+    expect(gradle[0]!.command).toBe('./gradlew :core:testReleaseUnitTest');
+    const whole = (await call('cheatsheet', { sheet: 'simctl' })).data.entries as unknown[];
+    expect(whole.length).toBeGreaterThan(20);
+    expect((await call('cheatsheet', { sheet: 'nope' })).isError).toBe(true);
+  });
+
   it('rejects oversized and invalid input without running the tool', async () => {
     const r = await call('json_to_kotlin', { json: '' });
     expect(r.isError).toBe(true);

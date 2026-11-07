@@ -16,6 +16,7 @@ import { convertVector } from '@androidboss/core/vector';
 import { generateRules, lintRules, ruleKinds, type RuleKind } from '@androidboss/core/keep-rules';
 import { generateActuals, TARGETS, type Target } from '@androidboss/core/expect-actual';
 import { swiftInterop } from '@androidboss/core/swift-interop';
+import { CHEATSHEET_SLUGS, cheatsheets, fill, findEntries, entriesOf } from '@androidboss/core/cheatsheets';
 import { bundleSnippets, kmpLibraries, KMP_LIBRARIES_CHECKED_ON, LIBRARY_CATEGORIES, TARGET_GROUPS, type TargetGroup } from '@androidboss/data/kmp-libraries';
 import { checkManifest, findPermission, PERMISSIONS_SOURCE } from '@androidboss/data/permissions';
 import { changesBetween, changeUrl, findTargetSdk, readManifest, VERSION_NAMES } from '@androidboss/data/target-sdk';
@@ -23,7 +24,7 @@ import { changesBetween, changeUrl, findTargetSdk, readManifest, VERSION_NAMES }
 export const SERVER_INFO = { name: 'androidboss', title: 'AndroidBoss', version: '0.1.3', websiteUrl: 'https://androidboss.info/agents/mcp-server/' };
 
 export const INSTRUCTIONS = `Tools for Android and Kotlin Multiplatform work, from androidboss.info. Each one is deterministic and checked against real toolchains (R8, Gradle, Kotlin/Native, swiftc, the Android CLI). Inputs are processed in memory and not stored. AndroidBoss is an independent, non-commercial community project, not affiliated with or endorsed by Google.
-Prefer these over guessing: retrace obfuscated stack traces with a mapping, check Kotlin/AGP/Gradle compatibility before changing versions, look up a permission or a targetSdk change before editing a manifest, and use find_kmp_libraries for current library versions.`;
+Prefer these over guessing: use cheatsheet for exact adb, Gradle, emulator, signing, Android CLI and simctl commands, retrace obfuscated stack traces with a mapping, check Kotlin/AGP/Gradle compatibility before changing versions, look up a permission or a targetSdk change before editing a manifest, and use find_kmp_libraries for current library versions.`;
 
 /**
  * Upper bounds on text inputs. The Workers Free plan allows 10 ms of CPU per request,
@@ -293,6 +294,46 @@ export function createServer(onTool?: (tool: ToolInfo) => void, limits: Record<k
       const r = swiftInterop(kotlin, { fileName: fileName ?? 'Shared.kt', module: module ?? 'Shared' });
       const rows = r.rows.map((x) => ({ kotlin: x.kotlin, swift: x.swift, notes: x.notes.map((n) => n.text) }));
       return result([r.swiftFile, ...r.notes.map((n) => `// Note: ${n.text}`)].join('\n'), { swiftFile: r.swiftFile, rows, notes: r.notes.map((n) => n.text) });
+    },
+  );
+
+  server.registerTool(
+    'cheatsheet',
+    {
+      title: 'Command cheatsheets',
+      description: `Exact, tested commands for Android and KMP work: ${cheatsheets.map((s) => `${s.slug} (${s.tool.name} ${s.tool.version})`).join('; ')}. Search by task words ("logs one app", "16 kb", "deep link"), optionally within one sheet, and fill placeholders such as package or module with values.`,
+      inputSchema: z.object({
+        query: z.string().max(100).optional().describe('Task words to search titles, tags and commands. Omit to list a whole sheet.'),
+        sheet: z.enum(CHEATSHEET_SLUGS).optional().describe('Limit to one cheatsheet.'),
+        values: z.record(z.string().max(40), z.string().max(300)).optional().describe('Placeholder values, e.g. {"package": "com.my.app", "module": "app", "variant": "release"}.'),
+      }),
+      outputSchema: z.object({
+        entries: z.array(z.object({ sheet: z.string(), id: z.string(), title: z.string(), command: z.string(), note: z.string().optional(), danger: z.string().optional(), since: z.string().optional(), url: z.string() })),
+        variables: z.array(z.object({ sheet: z.string(), key: z.string(), label: z.string(), example: z.string() })),
+      }),
+      annotations: READ_ONLY,
+    },
+    async ({ query, sheet, values }) => {
+      const matches = query?.trim()
+        ? findEntries(cheatsheets, query, sheet).map(({ sheet: s, entry }) => ({ s, entry }))
+        : cheatsheets.filter((s) => !sheet || s.slug === sheet).flatMap((s) => entriesOf(s).map(({ entry }) => ({ s, entry })));
+      const top = matches.slice(0, sheet && !query ? 80 : 20);
+      const entries = top.map(({ s, entry }) => ({
+        sheet: s.slug,
+        id: entry.id,
+        title: entry.title,
+        command: fill(entry.command, s.variables, values),
+        ...(entry.note ? { note: fill(entry.note, s.variables, values) } : {}),
+        ...(entry.danger ? { danger: entry.danger } : {}),
+        ...(entry.since ? { since: entry.since } : {}),
+        url: `https://androidboss.info/cheatsheets/${s.slug}/#${entry.id}`,
+      }));
+      const used = new Set(top.map(({ s }) => s.slug));
+      const variables = cheatsheets.filter((s) => used.has(s.slug)).flatMap((s) => s.variables.map((v) => ({ sheet: s.slug, ...v })));
+      const text = entries.length
+        ? entries.map((e) => `## ${e.title}${e.danger ? ` (${e.danger})` : ''}\n${e.command}${e.note ? `\n${e.note}` : ''}`).join('\n\n')
+        : 'No command matches. Try fewer or different words, or list a sheet with only the sheet parameter.';
+      return result(text, { entries, variables });
     },
   );
 
