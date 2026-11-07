@@ -38,7 +38,7 @@ export const simctl: Cheatsheet = {
       entries: [
         { id: 'link-framework', title: 'Build the shared framework for the simulator', command: './gradlew :{{module}}:linkDebugFrameworkIosSimulatorArm64', note: 'Output: {{module}}/build/bin/iosSimulatorArm64/debugFramework/. Task names follow your target and framework names.', tags: ['kmp', 'framework', 'gradle', 'link'], verify: 'none', docs: KMP },
         { id: 'ios-tests', title: 'Run shared tests on the iOS simulator', command: './gradlew :{{module}}:iosSimulatorArm64Test', note: 'Task names follow your KMP targets; list them with ./gradlew :{{module}}:tasks --all.', tags: ['kmp', 'tests', 'ios'], verify: 'none', docs: KMP },
-        { id: 'xcframework', title: 'Build an XCFramework for every Apple target', command: './gradlew :{{module}}:assembleXCFramework', note: 'Only available when the build declares an XCFramework.', tags: ['kmp', 'xcframework', 'release'], verify: 'none', docs: 'https://kotlinlang.org/docs/multiplatform/multiplatform-build-native-binaries.html#build-xcframeworks' },
+        { id: 'xcframework', title: 'Build an XCFramework for every Apple target', command: './gradlew :{{module}}:assembleSharedXCFramework', note: 'Replace Shared with your XCFramework’s name: the task is assemble<Name>XCFramework, and exists only when the build declares one.', tags: ['kmp', 'xcframework', 'release'], verify: 'none', docs: 'https://kotlinlang.org/docs/multiplatform/multiplatform-build-native-binaries.html#build-xcframeworks' },
       ],
     },
     {

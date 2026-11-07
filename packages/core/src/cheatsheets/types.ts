@@ -13,19 +13,32 @@ export interface Variable {
 
 /**
  * How an entry is checked by the opt-in toolchain tests:
- * help    every subcommand and flag appears in the tool's own help text
- * run     the command is run (read-only commands, against the test emulator)
- * none    can't be checked automatically; `note` says why or what to watch for
+ * help     every subcommand and flag appears in the tool's own help text
+ * run      the command is run (read-only commands, against the test emulator)
+ * compile  the snippet is compiled (Kotlin with kotlinc, keep rules with R8,
+ *          Gradle Kotlin DSL in a real project); see `context`
+ * none     can't be checked automatically; `note` says why or what to watch for
  */
-export type Verify = 'help' | 'run' | 'none';
+export type Verify = 'help' | 'run' | 'compile' | 'none';
+
+/** What an entry contains, for syntax labels and the Markdown fences. */
+export type Lang = 'shell' | 'kotlin' | 'kts' | 'proguard' | 'toml';
 
 export interface Entry {
   /** Unique within the sheet; used as the page anchor. */
   id: string;
   /** Task-first, starting with a verb: "Show logs for one app". */
   title: string;
-  /** One or more lines; each line is one command. */
+  /** One or more lines: shell commands, or a code snippet when `lang` says so. */
   command: string;
+  /** Default: shell. */
+  lang?: Lang;
+  /**
+   * Where a snippet goes when it is compiled: for Kotlin, 'body' (inside a suspend
+   * function, the default) or 'top-level'; for Gradle Kotlin DSL, the block it
+   * belongs in ('plugins', 'kotlin', 'sourceSets').
+   */
+  context?: string;
   note?: string;
   /** Minimum platform or tool version, e.g. "Android 11+" or "AGP 9.3+". */
   since?: string;

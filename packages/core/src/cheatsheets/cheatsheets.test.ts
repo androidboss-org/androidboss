@@ -6,7 +6,7 @@ const RISKY = /\b(uninstall|pm clear|reset-permissions|wipe|erase|delete|rm -|fo
 
 describe('cheatsheets', () => {
   it('have unique, URL-safe slugs and the expected set', () => {
-    expect(CHEATSHEET_SLUGS).toEqual(['adb', 'gradle', 'emulator', 'android-cli', 'signing', 'simctl']);
+    expect(CHEATSHEET_SLUGS).toEqual(['adb', 'gradle', 'emulator', 'android-cli', 'coroutines', 'kmp-gradle', 'r8', 'signing', 'simctl']);
     for (const s of CHEATSHEET_SLUGS) expect(s).toMatch(/^[a-z0-9-]+$/);
   });
 
@@ -49,7 +49,7 @@ describe('cheatsheets', () => {
 
     it('flags commands that delete data or change device state', () => {
       for (const { entry } of all) {
-        if (RISKY.test(entry.command)) expect(entry.danger, `${entry.id}: ${entry.command}`).toBeDefined();
+        if ((entry.lang ?? 'shell') === 'shell' && RISKY.test(entry.command)) expect(entry.danger, `${entry.id}: ${entry.command}`).toBeDefined();
       }
     });
 

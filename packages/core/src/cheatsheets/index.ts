@@ -1,4 +1,7 @@
 import { adb } from './adb.ts';
+import { coroutines } from './coroutines.ts';
+import { kmp } from './kmp.ts';
+import { r8 } from './r8.ts';
 import { androidCli } from './android-cli.ts';
 import { emulator } from './emulator.ts';
 import { gradle } from './gradle.ts';
@@ -10,7 +13,7 @@ export * from './types.ts';
 export * from './fill.ts';
 
 /** In the order the hub lists them. */
-export const cheatsheets: readonly Cheatsheet[] = [adb, gradle, emulator, androidCli, signing, simctl];
+export const cheatsheets: readonly Cheatsheet[] = [adb, gradle, emulator, androidCli, coroutines, kmp, r8, signing, simctl];
 
 export const cheatsheetBySlug = (slug: string) => cheatsheets.find((s) => s.slug === slug);
 
