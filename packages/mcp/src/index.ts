@@ -21,7 +21,7 @@ import { bundleSnippets, kmpLibraries, KMP_LIBRARIES_CHECKED_ON, LIBRARY_CATEGOR
 import { checkManifest, findPermission, PERMISSIONS_SOURCE } from '@androidboss/data/permissions';
 import { changesBetween, changeUrl, findTargetSdk, readManifest, VERSION_NAMES } from '@androidboss/data/target-sdk';
 
-export const SERVER_INFO = { name: 'androidboss', title: 'AndroidBoss', version: '0.1.3', websiteUrl: 'https://androidboss.info/agents/mcp-server/' };
+export const SERVER_INFO = { name: 'androidboss', title: 'AndroidBoss', version: '0.2.0', websiteUrl: 'https://androidboss.info/agents/mcp-server/' };
 
 export const INSTRUCTIONS = `Tools for Android and Kotlin Multiplatform work, from androidboss.info. Each one is deterministic and checked against real toolchains (R8, Gradle, Kotlin/Native, swiftc, the Android CLI). Inputs are processed in memory and not stored. AndroidBoss is an independent, non-commercial community project, not affiliated with or endorsed by Google.
 Prefer these over guessing: use cheatsheet for exact adb, Gradle, emulator, signing, Android CLI and simctl commands, retrace obfuscated stack traces with a mapping, check Kotlin/AGP/Gradle compatibility before changing versions, look up a permission or a targetSdk change before editing a manifest, and use find_kmp_libraries for current library versions.`;

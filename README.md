@@ -85,6 +85,7 @@ npx androidboss check-compatibility --kotlin 2.4.0 --agp 9.5.0 --gradle 9.6.0
 | `find-kmp-libraries` | `find_kmp_libraries` | KMP libraries by task and target, with current versions and a ready `libs.versions.toml`. |
 | `android-permissions` | `android_permissions` | Permission facts, and a check of your `AndroidManifest.xml`. |
 | `target-sdk-changes` | `target_sdk_changes` | Behaviour changes between two `targetSdk` levels, flagged against your manifest. |
+| `cheatsheet` | `cheatsheet` | Tested commands for adb, Gradle, the emulator, the Android CLI, signing and `simctl`, searched by task, with your values filled in. |
 
 All tools are read-only: they never write files, run commands or call other services.
 
@@ -233,6 +234,9 @@ npx androidboss target-sdk-changes --to 36 --manifest @app/src/main/AndroidManif
 # Networking libraries that publish both Android and iOS targets
 npx androidboss find-kmp-libraries --category networking --targets android,ios
 
+# Exact, tested commands by task, with your package filled in
+npx androidboss cheatsheet --query "logs one app" --values.package com.my.app
+
 # Look up permissions and check a manifest for Play-restricted ones
 npx androidboss android-permissions --names CAMERA,ACCESS_FINE_LOCATION --manifest @app/src/main/AndroidManifest.xml
 ```
@@ -241,11 +245,12 @@ npx androidboss android-permissions --names CAMERA,ACCESS_FINE_LOCATION --manife
 
 | Component | Version |
 |---|---|
-| `androidboss` CLI on npm | 0.1.3 |
-| MCP server | 0.1.3, MCP spec `2026-07-28` with a fallback for 2025 clients |
+| `androidboss` CLI on npm | 0.2.0 |
+| MCP server | 0.2.0, MCP spec `2026-07-28` with a fallback for 2025 clients |
 | Node.js | 26 LTS recommended. Minimum 22.23.4; on the 24 line use 24.22.1 or newer, which include the [October 2026 security fixes](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases) |
 | Android CLI commands | Checked against Android CLI 1.1.16717390 (2 November 2026) |
 | Kotlin, AGP and Gradle compatibility data | Copied from the official tables on 3 November 2026 |
+| Cheatsheets | 213 commands checked on 7 November 2026 against adb 37.0.1 (Android 17 emulator), Gradle 9.6 with AGP 9.5, emulator 37, build-tools 36.1.0, Android CLI 1.1.16717390 and Xcode 27 |
 
 Each release is listed with its changes on the [Releases](https://github.com/androidboss-org/androidboss/releases) page.
 
@@ -260,9 +265,11 @@ Each release is listed with its changes on the [Releases](https://github.com/and
 ```text
 packages/
   core/         Tool logic in plain TypeScript. Runs in browsers, Node.js and Workers.
+                core/src/cheatsheets holds the cheatsheets and the tests that check every
+                command against the real tools (npm run test:cheatsheets -w @androidboss/core).
   data/         Data the tools read: permissions, targetSdk changes, compatibility tables,
                 KMP libraries, Apple privacy keys. Refreshed from the source by scripts/.
-  mcp/          The MCP server (14 tools) and its HTTP handler.
+  mcp/          The MCP server (15 tools) and its HTTP handler.
   cli/          The npm package `androidboss`: the server as commands and as a stdio server.
 apps/
   mcp-worker/   mcp.androidboss.org on Cloudflare Workers.

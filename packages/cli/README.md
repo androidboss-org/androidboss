@@ -20,6 +20,9 @@ npx androidboss check-compatibility --kotlin 2.4.0 --agp 9.5.0 --gradle 9.6.0
 # Kotlin data classes from a JSON sample
 npx androidboss json-to-kotlin --root-name User < user.json
 
+# Tested commands by task, with your package filled in
+npx androidboss cheatsheet --query "logs one app" --values.package com.my.app
+
 # What changes when targetSdk goes to 36, checked against your manifest
 npx androidboss target-sdk-changes --to 36 --manifest @app/src/main/AndroidManifest.xml
 ```
@@ -44,12 +47,13 @@ npx androidboss target-sdk-changes --to 36 --manifest @app/src/main/AndroidManif
 | `find-kmp-libraries` | KMP libraries by task and target, with current versions |
 | `android-permissions` | Permission facts, and a manifest check |
 | `target-sdk-changes` | Behavior changes between two targetSdk levels |
+| `cheatsheet` | Tested adb, Gradle, emulator, Android CLI, signing and simctl commands by task, with your values filled in |
 
 Each tool's output is checked against the real toolchain (R8, Gradle, aapt2, Kotlin/Native, swiftc, the Android CLI) before it ships.
 
 ## As an MCP server
 
-`npx androidboss mcp` serves the same 14 tools over stdio. For Claude Code:
+`npx androidboss mcp` serves the same 15 tools over stdio. For Claude Code:
 
 ```sh
 claude mcp add androidboss -- npx -y androidboss mcp
