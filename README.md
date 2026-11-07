@@ -77,7 +77,7 @@ npx androidboss check-compatibility --kotlin 2.4.0 --agp 9.5.0 --gradle 9.6.0
 | `android-cli-tasks` | `android_cli_tasks` | What the Android CLI can do, and the fields each task takes. |
 | `android-cli-command` | `android_cli_command` | The exact Android CLI command for a task. |
 | `crash-to-prompt` | `crash_to_prompt` | A crash or ANR as a short, redacted prompt for an agent: root cause, files to open, trimmed trace. |
-| `version-catalog` | `version_catalog` | Moves a build file's dependencies and plugins into `libs.versions.toml`. |
+| `version-catalog` | `version_catalog` | Moves a build file's dependencies and plugins into `libs.versions.toml`, lists newer stable versions, and can write them in (`--use-latest`). |
 | `convert-vector` | `convert_vector` | SVG, VectorDrawable and Compose `ImageVector`, in any direction. |
 | `keep-rules` | `keep_rules` | Writes R8 keep rules for reflection, JSON models and JNI, or lints `proguard-rules.pro`. |
 | `expect-actual` | `expect_actual` | `actual` declarations for each KMP target from `commonMain` `expect` code. |
@@ -245,11 +245,12 @@ npx androidboss android-permissions --names CAMERA,ACCESS_FINE_LOCATION --manife
 
 | Component | Version |
 |---|---|
-| `androidboss` CLI on npm | 0.3.0 |
-| MCP server | 0.3.0, MCP spec `2026-07-28` with a fallback for 2025 clients |
+| `androidboss` CLI on npm | 0.4.0 |
+| MCP server | 0.4.0, MCP spec `2026-07-28` with a fallback for 2025 clients |
 | Node.js | 26 LTS recommended. Minimum 22.23.4; on the 24 line use 24.22.1 or newer, which include the [October 2026 security fixes](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases) |
 | Android CLI commands | Checked against Android CLI 1.1.16717390 (2 November 2026) |
 | Kotlin, AGP and Gradle compatibility data | Copied from the official tables on 3 November 2026 |
+| Newest library and plugin versions | 2,225 Google Maven artifacts, 108 Maven Central libraries and 26 Gradle plugins, read from the repositories on 8 November 2026 (`npm run update:latest -w @androidboss/data`) |
 | Cheatsheets | 282 entries in 9 sheets. Commands checked against adb 37.0.1 (Android 17 emulator), Gradle 9.6 with AGP 9.5, emulator 37, build-tools 36.1.0, Android CLI 1.1.16717390 and Xcode 27; Kotlin snippets compiled with kotlinx.coroutines 1.11; keep rules run through R8; KMP Gradle snippets configured with Kotlin 2.4.21 and AGP 9.5 (7–8 November 2026) |
 
 Each release is listed with its changes on the [Releases](https://github.com/androidboss-org/androidboss/releases) page.
@@ -268,7 +269,8 @@ packages/
                 core/src/cheatsheets holds the cheatsheets and the tests that check every
                 command against the real tools (npm run test:cheatsheets -w @androidboss/core).
   data/         Data the tools read: permissions, targetSdk changes, compatibility tables,
-                KMP libraries, Apple privacy keys. Refreshed from the source by scripts/.
+                KMP libraries, Apple privacy keys, newest library versions. Refreshed from
+                the source by scripts/.
   mcp/          The MCP server (15 tools) and its HTTP handler.
   cli/          The npm package `androidboss`: the server as commands and as a stdio server.
 apps/

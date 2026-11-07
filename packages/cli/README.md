@@ -39,7 +39,7 @@ npx androidboss target-sdk-changes --to 36 --manifest @app/src/main/AndroidManif
 | `check-compatibility` | Kotlin, AGP, Gradle, KSP, Compose Multiplatform and compileSdk versions |
 | `android-cli-tasks`, `android-cli-command` | The exact Android CLI command for a task |
 | `crash-to-prompt` | A crash or ANR as a short, redacted prompt for an agent |
-| `version-catalog` | Move a build file's dependencies into libs.versions.toml |
+| `version-catalog` | Move a build file's dependencies into libs.versions.toml, list newer versions, and apply them with `--use-latest` |
 | `convert-vector` | SVG, VectorDrawable and Compose ImageVector in any direction |
 | `keep-rules` | Write R8 keep rules, or lint proguard-rules.pro |
 | `expect-actual` | actual declarations for each KMP target |
