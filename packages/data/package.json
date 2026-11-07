@@ -20,7 +20,9 @@
     "test": "vitest run",
     "check": "tsc --noEmit",
     "test:gradle": "CHECK_GRADLE=1 vitest run src/kmp-libraries.gradle.test.ts src/latest-versions.gradle.test.ts",
-    "update:latest": "node --experimental-strip-types scripts/update-latest-versions.mts"
+    "update:latest": "node --experimental-strip-types scripts/update-latest-versions.mts",
+    "update:kmp": "node --experimental-strip-types scripts/update-kmp-libraries.mts",
+    "watch:versions": "node --experimental-strip-types scripts/version-watch.mts"
   },
   "devDependencies": {
     "@types/node": "26.6.6",

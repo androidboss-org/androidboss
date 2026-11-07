@@ -1,0 +1,84 @@
+name: Version watch
+
+# Every Monday:
+# - refreshes the newest-versions and KMP library data from Maven, runs the tests,
+#   and opens (or updates) a pull request when a version changed;
+# - compares Kotlin, AGP, Gradle, Compose Multiplatform, coroutines, Platform-Tools,
+#   build-tools, the Android API level and the Android CLI with the versions this
+#   project was checked with, and keeps one "version-watch" issue listing what to
+#   update. The issue closes itself when everything is current.
+on:
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+concurrency:
+  group: version-watch
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BRANCH: version-watch/data
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+
+      - name: Refresh version data
+        run: |
+          npm run update:latest -w @androidboss/data
+          npm run update:kmp -w @androidboss/data
+
+      - name: Changed versions, ignoring the checked date
+        id: data
+        run: |
+          changes=$(git diff -U0 -- packages/data/src | grep -E '^[+-] ' | grep -v '"checkedOn"' | wc -l)
+          echo "changes=$changes" >> "$GITHUB_OUTPUT"
+
+      - name: Test the refreshed data
+        if: steps.data.outputs.changes != '0'
+        run: |
+          npm test
+          npm run check
+
+      - name: Open or update the data pull request
+        if: steps.data.outputs.changes != '0'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -C "$BRANCH"
+          git commit -am "Refresh newest versions and KMP libraries ($(date -u +%F))"
+          git push --force origin "$BRANCH"
+          if [ -z "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
+            gh pr create --head "$BRANCH" --title 'Refresh newest versions and KMP libraries' \
+              --body "Weekly refresh from Maven Central, Google Maven and the Gradle Plugin Portal. Unit tests and type checks passed in the [version watch run]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID). Before merging, run \`npm run test:gradle -w @androidboss/data\` locally to resolve the new versions with Gradle."
+          fi
+
+      - name: Compare toolchains
+        run: npm run --silent watch:versions -w @androidboss/data -- --json > watch.json
+
+      - name: Open, update or close the version-watch issue
+        run: |
+          gh label create version-watch --color 0e8a16 --description 'New tool versions to adopt' 2>/dev/null || true
+          issue=$(gh issue list --label version-watch --state open --json number --jq '.[0].number')
+          outdated=$(jq -r '.outdated | join(", ")' watch.json)
+          jq -r .markdown watch.json > body.md
+          printf '\n\n_Updated by the [version watch run](%s/%s/actions/runs/%s)._\n' "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" >> body.md
+          if [ -n "$outdated" ]; then
+            if [ -n "$issue" ]; then
+              gh issue edit "$issue" --title "New versions: $outdated" --body-file body.md
+            else
+              gh issue create --label version-watch --title "New versions: $outdated" --body-file body.md
+            fi
+          elif [ -n "$issue" ]; then
+            gh issue close "$issue" --comment "$(cat body.md)"
+          fi
