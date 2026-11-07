@@ -1,5 +1,5 @@
 {
-  "checkedOn": "2026-11-05",
+  "checkedOn": "2026-11-07",
   "libraries": {
     "ai.koog:koog-agents": {
       "version": "1.3.0",
@@ -1214,10 +1214,10 @@
       ]
     },
     "io.github.oshai:kotlin-logging": {
-      "version": "8.0.4",
+      "version": "8.0.6",
       "prerelease": false,
       "androidViaJvm": false,
-      "released": "2026-05-27",
+      "released": "2026-11-06",
       "targets": [
         "android",
         "ios",
