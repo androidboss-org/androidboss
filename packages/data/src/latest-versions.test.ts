@@ -23,6 +23,7 @@ describe('version comparison', () => {
     expect(updateFor('1.19.1', '1.19.1')).toBeUndefined();
     expect(updateFor('1.20.0-alpha01', '1.19.1')).toBeUndefined();
     expect(updateFor('$kotlinVersion', '2.4.21')).toBeUndefined();
+    expect(updateFor('2024.12.01', '2026.09.00')!.major).toBe(false);
   });
 });
 

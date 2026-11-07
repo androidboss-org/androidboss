@@ -53,7 +53,9 @@ export interface Update {
 export function updateFor(current: string | undefined, latest: string | undefined): Update | undefined {
   if (!current || !latest || /[$}]/.test(current) || isPrerelease(latest)) return undefined;
   if (compareVersions(latest, current) <= 0) return undefined;
-  return { current, latest, major: current.split('.')[0] !== latest.split('.')[0] };
+  // Date-based versions (BOMs such as 2026.09.00) change their first number every year.
+  const calendar = /^20\d\d\./.test(current);
+  return { current, latest, major: !calendar && current.split('.')[0] !== latest.split('.')[0] };
 }
 
 
