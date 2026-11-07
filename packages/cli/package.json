@@ -1,6 +1,6 @@
 {
   "name": "androidboss",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Community-made tools for Android and Kotlin Multiplatform developers, from androidboss.info, in your terminal and as a local MCP server for coding agents. Not affiliated with Google.",
   "license": "MIT",
   "author": "AndroidBoss (https://androidboss.info/)",

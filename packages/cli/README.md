@@ -47,7 +47,7 @@ npx androidboss target-sdk-changes --to 36 --manifest @app/src/main/AndroidManif
 | `find-kmp-libraries` | KMP libraries by task and target, with current versions |
 | `android-permissions` | Permission facts, and a manifest check |
 | `target-sdk-changes` | Behavior changes between two targetSdk levels |
-| `cheatsheet` | Tested adb, Gradle, emulator, Android CLI, signing and simctl commands by task, with your values filled in |
+| `cheatsheet` | Tested commands and compiled snippets (adb, Gradle, emulator, Android CLI, coroutines, KMP Gradle, R8, signing, simctl) by task, with your values filled in |
 
 Each tool's output is checked against the real toolchain (R8, Gradle, aapt2, Kotlin/Native, swiftc, the Android CLI) before it ships.
 
