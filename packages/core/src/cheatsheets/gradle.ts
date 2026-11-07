@@ -8,8 +8,8 @@ export const gradle: Cheatsheet = {
   title: 'Gradle for Android cheatsheet',
   tagline: 'Gradle commands for Android projects: build variants, tests, dependency trees, build speed flags and R8 reports.',
   intro:
-    'The ./gradlew commands Android developers use every day, grouped by task. Fill in your module and build variant once. Every task and flag was checked in a real AGP 9.5.1 project on Gradle 9.6.',
-  tool: { name: 'Gradle and the Android Gradle plugin', version: 'Gradle 9.6.0, AGP 9.5.1', checkedOn: '2026-11-08', docs: AGP },
+    'The ./gradlew commands Android developers use every day, grouped by task. Fill in your module and build variant once. Every task and flag was checked in a real AGP 9.5.1 project on Gradle 9.9.',
+  tool: { name: 'Gradle and the Android Gradle plugin', version: 'Gradle 9.9.0, AGP 9.5.1', checkedOn: '2026-11-07', docs: AGP },
   variables: [
     { key: 'module', label: 'Module', example: 'app' },
     { key: 'variant', label: 'Build variant', example: 'debug' },
@@ -82,7 +82,7 @@ export const gradle: Cheatsheet = {
         { id: 'property', title: 'Pass a project property', command: './gradlew :{{module}}:assemble{{variant:cap}} -PversionCode=42', tags: ['property', 'ci', 'version'], verify: 'help' },
         { id: 'daemons', title: 'Check or stop Gradle daemons', command: './gradlew --status\n./gradlew --stop', tags: ['daemon', 'memory', 'stuck'], verify: 'help' },
         { id: 'version', title: 'Show Gradle, Kotlin and JVM versions', command: './gradlew --version', tags: ['version', 'jdk', 'kotlin'], verify: 'help' },
-        { id: 'wrapper', title: 'Upgrade the Gradle wrapper', command: './gradlew wrapper --gradle-version 9.6.0', note: 'Run it twice: the second run uses the new version to update the wrapper files. Check AGP compatibility first.', tags: ['upgrade', 'wrapper', 'version'], verify: 'help', docs: 'https://docs.gradle.org/current/userguide/gradle_wrapper.html' },
+        { id: 'wrapper', title: 'Upgrade the Gradle wrapper', command: './gradlew wrapper --gradle-version 9.9.0', note: 'Run it twice: the second run uses the new version to update the wrapper files. Check AGP compatibility first.', tags: ['upgrade', 'wrapper', 'version'], verify: 'help', docs: 'https://docs.gradle.org/current/userguide/gradle_wrapper.html' },
       ],
     },
   ],

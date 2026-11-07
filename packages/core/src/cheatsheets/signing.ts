@@ -13,7 +13,7 @@ export const signing: Cheatsheet = {
   tagline: 'Keystores, signing, 16 KB alignment, App Bundle testing and APK inspection: keytool, apksigner, zipalign, bundletool.',
   intro:
     'Commands for signing and checking release builds: create and inspect keystores, sign and verify APKs, check 16 KB page alignment, turn an App Bundle into installable APKs, and look inside an APK. Checked with build-tools 36.1.0 and JDK 21.',
-  tool: { name: 'keytool, apksigner, zipalign, bundletool, apkanalyzer', version: 'build-tools 36.1.0, bundletool 1.18.3', checkedOn: '2026-11-07', docs: SIGN },
+  tool: { name: 'keytool, apksigner, zipalign, bundletool, apkanalyzer', version: 'build-tools 37.0.0, bundletool 1.18.3', checkedOn: '2026-11-07', docs: SIGN },
   variables: [
     { key: 'keystore', label: 'Keystore', example: 'upload-keystore.jks' },
     { key: 'alias', label: 'Key alias', example: 'upload' },

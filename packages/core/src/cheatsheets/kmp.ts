@@ -20,7 +20,7 @@ export const kmp: Cheatsheet = {
   tagline: 'Gradle setup for a shared KMP module: targets, the AGP 9 Android plugin, iOS frameworks, dependencies and tasks.',
   intro:
     'The build.gradle.kts blocks a Kotlin Multiplatform shared module needs, using the Android-KMP library plugin that AGP 9 requires. Every snippet was configured together in a real project with Kotlin 2.4.21 and AGP 9.5.1.',
-  tool: { name: 'Kotlin Gradle plugin and AGP', version: 'Kotlin 2.4.21, AGP 9.5.1, Gradle 9.6', checkedOn: '2026-11-08', docs: DSL },
+  tool: { name: 'Kotlin Gradle plugin and AGP', version: 'Kotlin 2.4.21, AGP 9.5.1, Gradle 9.9', checkedOn: '2026-11-07', docs: DSL },
   variables: [
     { key: 'module', label: 'Shared module', example: 'shared' },
     { key: 'namespace', label: 'Android namespace', example: 'com.example.shared' },
