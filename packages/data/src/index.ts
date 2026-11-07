@@ -6,3 +6,4 @@ export * from './target-sdk.ts';
 export * from './plist-keys.ts';
 export * from './kmp-libraries.ts';
 export * from './privacy.ts';
+export * from './latest-versions.ts';

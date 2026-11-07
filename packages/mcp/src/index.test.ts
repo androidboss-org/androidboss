@@ -98,6 +98,19 @@ describe('AndroidBoss MCP server', () => {
     expect(r.data.buildFile).toContain('libs.ktor.client.core');
   });
 
+  it('reports and applies newer stable versions', async () => {
+    const buildFile = 'plugins {\n    id("com.android.application") version "9.1.0"\n}\ndependencies {\n    implementation("androidx.core:core-ktx:1.13.0")\n    implementation("com.squareup.retrofit2:retrofit:2.11.0")\n    implementation("com.squareup.retrofit2:converter-gson:2.11.0")\n}\n';
+    const r = await call('version_catalog', { buildFile });
+    const updates = r.data.updates as { ref: string; latest: string; major: boolean; applicable: boolean }[];
+    expect(updates.map((u) => u.ref)).toEqual(expect.arrayContaining(['agp', 'core-ktx', 'retrofit2']));
+    expect(updates.find((u) => u.ref === 'retrofit2')!.major).toBe(true);
+    expect(r.data.toml).toContain('core-ktx = "1.13.0"');
+    const applied = await call('version_catalog', { buildFile, useLatest: true });
+    const core = updates.find((u) => u.ref === 'core-ktx')!;
+    expect(applied.data.toml).toContain(`core-ktx = "${core.latest}"`);
+    expect(applied.text).toContain('Newer stable versions');
+  });
+
   it('converts SVG to an ImageVector', async () => {
     const r = await call('convert_vector', { input: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z"/></svg>', to: 'image-vector', name: 'Square' });
     expect(r.text).toContain('ImageVector.Builder');

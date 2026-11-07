@@ -104,3 +104,11 @@ describe('aliases', () => {
     expect(r.buildFile).toContain('implementation(libs.thing)');
   });
 });
+
+describe('applyVersionUpdates', () => {
+  it('rewrites only the named keys in [versions]', async () => {
+    const { applyVersionUpdates } = await import('./index.ts');
+    const toml = '[versions]\nagp = "9.1.0"\nkotlin = "2.2.0"\n\n[libraries]\nagp = { group = "x", name = "y", version = "1.0" }\n';
+    expect(applyVersionUpdates(toml, { agp: '9.5.1', missing: '1' })).toBe('[versions]\nagp = "9.5.1"\nkotlin = "2.2.0"\n\n[libraries]\nagp = { group = "x", name = "y", version = "1.0" }\n');
+  });
+});

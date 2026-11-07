@@ -11,7 +11,8 @@ import { jsonToKotlin } from '@androidboss/core/json-to-kotlin';
 import { checkVersions, CHECKED_ON as COMPAT_CHECKED_ON } from '@androidboss/core/compat';
 import { buildCommand, CHECKED_VERSION as CLI_VERSION, defaults as cliDefaults, tasks as cliTasks } from '@androidboss/core/android-cli';
 import { crashToPrompt, goals } from '@androidboss/core/crash-prompt';
-import { convertToCatalog } from '@androidboss/core/catalog';
+import { applyVersionUpdates, convertToCatalog } from '@androidboss/core/catalog';
+import { catalogUpdates, LATEST_CHECKED_ON } from '@androidboss/data/latest-versions';
 import { convertVector } from '@androidboss/core/vector';
 import { generateRules, lintRules, ruleKinds, type RuleKind } from '@androidboss/core/keep-rules';
 import { generateActuals, TARGETS, type Target } from '@androidboss/core/expect-actual';
@@ -203,17 +204,29 @@ export function createServer(onTool?: (tool: ToolInfo) => void, limits: Record<k
     'version_catalog',
     {
       title: 'Convert to a version catalog',
-      description: 'Move the dependencies and plugins of a build.gradle(.kts) file into libs.versions.toml, and rewrite the build file to use the catalog accessors. Accessors are checked to compile with Gradle.',
+      description: `Move the dependencies and plugins of a build.gradle(.kts) file into libs.versions.toml, and rewrite the build file to use the catalog accessors. Accessors are checked to compile with Gradle. Also lists newer stable versions (AndroidX, Google, common Maven Central libraries and plugins, checked ${LATEST_CHECKED_ON}); set useLatest to write them into the catalog.`,
       inputSchema: z.object({
         buildFile: text(L.medium, 'Contents of build.gradle.kts or build.gradle.'),
         dsl: z.enum(['kts', 'groovy']).optional().describe('Default: kts.'),
+        useLatest: z.boolean().optional().describe('Write the newest stable versions into the catalog where every artifact sharing a version agrees. Default: false.'),
       }),
-      outputSchema: z.object({ toml: z.string(), buildFile: z.string(), warnings: z.array(z.string()) }),
+      outputSchema: z.object({
+        toml: z.string(),
+        buildFile: z.string(),
+        warnings: z.array(z.string()),
+        updates: z.array(z.object({ ref: z.string(), current: z.string(), latest: z.string(), major: z.boolean(), uses: z.array(z.string()), applicable: z.boolean(), reason: z.string().optional() })),
+      }),
       annotations: READ_ONLY,
     },
-    async ({ buildFile, dsl }) => {
+    async ({ buildFile, dsl, useLatest }) => {
       const r = convertToCatalog(buildFile, dsl ?? 'kts');
-      return result(`# gradle/libs.versions.toml\n${r.toml}\n\n# build file\n${r.buildFile}`, { toml: r.toml, buildFile: r.buildFile, warnings: r.warnings });
+      const updates = catalogUpdates([
+        ...r.libraries.map((l) => ({ coordinates: `${l.group}:${l.name}`, kind: 'library' as const, ...(l.version ? { version: l.version } : {}), ...(l.versionRef ? { versionRef: l.versionRef } : {}) })),
+        ...r.plugins.map((p) => ({ coordinates: p.id, kind: 'plugin' as const, version: p.version, ...(p.versionRef ? { versionRef: p.versionRef } : {}) })),
+      ]);
+      const toml = useLatest ? applyVersionUpdates(r.toml, Object.fromEntries(updates.filter((u) => u.applicable).map((u) => [u.ref, u.latest]))) : r.toml;
+      const notes = updates.map((u) => `# ${u.ref}: ${u.current} → ${u.latest}${u.major ? ' (major)' : ''}${u.applicable ? '' : ` (not applied: ${u.reason})`}`);
+      return result(`# gradle/libs.versions.toml\n${toml}\n\n# build file\n${r.buildFile}${notes.length ? `\n\n# Newer stable versions${useLatest ? ' (applied where noted)' : ''}\n${notes.join('\n')}` : ''}`, { toml, buildFile: r.buildFile, warnings: r.warnings, updates });
     },
   );
 

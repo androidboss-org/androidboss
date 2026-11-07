@@ -12,12 +12,15 @@
     "./prompt-recipes": "./src/prompt-recipes.ts",
     "./official-skills": "./src/official-skills.ts",
     "./kmp-libraries": "./src/kmp-libraries.ts",
-    "./privacy": "./src/privacy.ts"
+    "./privacy": "./src/privacy.ts",
+    "./latest-versions": "./src/latest-versions.ts",
+    "./versions": "./src/versions.ts"
   },
   "scripts": {
     "test": "vitest run",
     "check": "tsc --noEmit",
-    "test:gradle": "CHECK_GRADLE=1 vitest run src/kmp-libraries.gradle.test.ts"
+    "test:gradle": "CHECK_GRADLE=1 vitest run src/kmp-libraries.gradle.test.ts src/latest-versions.gradle.test.ts",
+    "update:latest": "node --experimental-strip-types scripts/update-latest-versions.mts"
   },
   "devDependencies": {
     "@types/node": "26.6.6",

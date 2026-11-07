@@ -246,3 +246,21 @@ export function convertToCatalog(buildFile: string, dsl: Dsl = 'kts'): CatalogRe
 
   return { toml, buildFile: out, libraries: libList, plugins: [...plugins.values()], warnings };
 }
+
+/**
+ * Rewrites [versions] entries of a catalog made by convertToCatalog: `updates` maps
+ * a version key to its new version. Keys that aren't in the file are ignored.
+ */
+export function applyVersionUpdates(toml: string, updates: Record<string, string>): string {
+  let section = '';
+  return toml
+    .split('\n')
+    .map((line) => {
+      const header = line.match(/^\[([a-z]+)\]\s*$/);
+      if (header) section = header[1]!;
+      if (section !== 'versions') return line;
+      const m = line.match(/^([A-Za-z0-9_-]+)\s*=\s*"[^"]*"(.*)$/);
+      return m && updates[m[1]!] ? `${m[1]} = "${updates[m[1]!]}"${m[2]}` : line;
+    })
+    .join('\n');
+}
