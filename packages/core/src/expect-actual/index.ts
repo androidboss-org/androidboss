@@ -2,13 +2,13 @@
  * Generates `actual` declarations and file layout for Kotlin Multiplatform
  * `expect` declarations, plus ready-made templates with real platform code.
  *
- * Everything here was compiled with Kotlin 2.4.21 and AGP 9.5.0 for Android,
+ * Everything here was compiled with Kotlin 2.4.21 and AGP 9.5.1 for Android,
  * JVM, iosSimulatorArm64, JS and Wasm (see expect-actual.gradle.test.ts).
  */
 
 import { closing, mask, splitTopLevel } from '../kotlin-source/index.ts';
 
-export const EXPECT_ACTUAL_CHECKED_WITH = { kotlin: '2.4.21', agp: '9.5.0' } as const;
+export const EXPECT_ACTUAL_CHECKED_WITH = { kotlin: '2.4.21', agp: '9.5.1' } as const;
 
 export type Target = 'android' | 'ios' | 'jvm' | 'js' | 'wasmJs';
 

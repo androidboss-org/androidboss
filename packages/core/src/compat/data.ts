@@ -3,7 +3,7 @@
  * tables and the date together; each table names its source.
  */
 
-export const CHECKED_ON = '2026-11-03';
+export const CHECKED_ON = '2026-11-08';
 
 export const SOURCES = {
   agpGradle: 'https://developer.android.com/build/releases/about-agp#updating-gradle',

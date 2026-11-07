@@ -19,8 +19,8 @@ export const kmp: Cheatsheet = {
   title: 'Kotlin Multiplatform Gradle cheatsheet',
   tagline: 'Gradle setup for a shared KMP module: targets, the AGP 9 Android plugin, iOS frameworks, dependencies and tasks.',
   intro:
-    'The build.gradle.kts blocks a Kotlin Multiplatform shared module needs, using the Android-KMP library plugin that AGP 9 requires. Every snippet was configured together in a real project with Kotlin 2.4.21 and AGP 9.5.0.',
-  tool: { name: 'Kotlin Gradle plugin and AGP', version: 'Kotlin 2.4.21, AGP 9.5.0, Gradle 9.6', checkedOn: '2026-11-08', docs: DSL },
+    'The build.gradle.kts blocks a Kotlin Multiplatform shared module needs, using the Android-KMP library plugin that AGP 9 requires. Every snippet was configured together in a real project with Kotlin 2.4.21 and AGP 9.5.1.',
+  tool: { name: 'Kotlin Gradle plugin and AGP', version: 'Kotlin 2.4.21, AGP 9.5.1, Gradle 9.6', checkedOn: '2026-11-08', docs: DSL },
   variables: [
     { key: 'module', label: 'Shared module', example: 'shared' },
     { key: 'namespace', label: 'Android namespace', example: 'com.example.shared' },
@@ -32,7 +32,7 @@ export const kmp: Cheatsheet = {
       id: 'setup',
       title: 'Plugins and versions',
       entries: [
-        { id: 'catalog', title: 'Declare the plugins in the version catalog', lang: 'toml', verify: 'compile', context: 'file:gradle/libs.versions.toml', command: '[versions]\nkotlin = "2.4.21"\nagp = "9.5.0"\n\n[plugins]\nkotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }\nandroidKotlinMultiplatformLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }', note: 'gradle/libs.versions.toml. Check that the Kotlin and AGP versions work together with the compatibility tool.', tags: ['version catalog', 'plugins', 'versions'], docs: 'https://docs.gradle.org/current/userguide/version_catalogs.html' },
+        { id: 'catalog', title: 'Declare the plugins in the version catalog', lang: 'toml', verify: 'compile', context: 'file:gradle/libs.versions.toml', command: '[versions]\nkotlin = "2.4.21"\nagp = "9.5.1"\n\n[plugins]\nkotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }\nandroidKotlinMultiplatformLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }', note: 'gradle/libs.versions.toml. Check that the Kotlin and AGP versions work together with the compatibility tool.', tags: ['version catalog', 'plugins', 'versions'], docs: 'https://docs.gradle.org/current/userguide/version_catalogs.html' },
         kts({ id: 'plugins', title: 'Apply the plugins to the shared module', context: 'plugins', command: 'plugins {\n    alias(libs.plugins.kotlinMultiplatform)\n    alias(libs.plugins.androidKotlinMultiplatformLibrary)\n}', note: 'With AGP 9, a KMP module uses com.android.kotlin.multiplatform.library instead of com.android.library.', since: 'AGP 9+', tags: ['plugins', 'agp 9', 'android library'], docs: ANDROID_KMP }),
       ],
     },

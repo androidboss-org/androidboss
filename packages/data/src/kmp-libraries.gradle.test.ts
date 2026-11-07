@@ -18,7 +18,7 @@ import { findGradle } from '../../core/src/testing/gradle.ts';
 import { bundleSnippets, kmpLibraries } from './kmp-libraries.ts';
 
 const KOTLIN = '2.4.21';
-const AGP = '9.5.0';
+const AGP = '9.5.1';
 const gradle = process.env.CHECK_GRADLE && process.platform === 'darwin' && process.env.ANDROID_HOME ? findGradle() : null;
 
 describe.skipIf(!gradle)('KMP libraries in a real project', () => {

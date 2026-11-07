@@ -31,7 +31,7 @@ Values: @file reads a file, - reads standard input. Piped input fills a tool's o
 
 Examples:
   androidboss retrace --mapping @app/build/outputs/mapping/release/mapping.txt < crash.txt
-  androidboss check-compatibility --kotlin 2.4.0 --agp 9.5.0 --gradle 9.6.0
+  androidboss check-compatibility --kotlin 2.4.0 --agp 9.5.1 --gradle 9.6.0
   androidboss json-to-kotlin --root-name User < user.json
   androidboss cheatsheet --query "logs one app" --values.package com.my.app
 

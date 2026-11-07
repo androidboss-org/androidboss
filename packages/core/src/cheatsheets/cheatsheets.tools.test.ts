@@ -230,7 +230,7 @@ rootProject.name = "cheatsheet"
 include(":app", ":lib")
 `,
   );
-  writeFileSync(join(dir, 'build.gradle.kts'), 'plugins {\n  id("com.android.application") version "9.5.0" apply false\n  id("com.android.library") version "9.5.0" apply false\n}\n');
+  writeFileSync(join(dir, 'build.gradle.kts'), 'plugins {\n  id("com.android.application") version "9.5.1" apply false\n  id("com.android.library") version "9.5.1" apply false\n}\n');
   // The R8 sheet's Gradle snippets go into the app and a library module, as a reader would paste them.
   const r8Snippets = (context: string) => filled('r8').filter((e) => e.entry.lang === 'kts' && e.entry.context === context).map((e) => e.command).join('\n');
   mkdirSync(join(dir, 'lib/src/main'), { recursive: true });

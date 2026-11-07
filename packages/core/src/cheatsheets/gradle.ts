@@ -8,8 +8,8 @@ export const gradle: Cheatsheet = {
   title: 'Gradle for Android cheatsheet',
   tagline: 'Gradle commands for Android projects: build variants, tests, dependency trees, build speed flags and R8 reports.',
   intro:
-    'The ./gradlew commands Android developers use every day, grouped by task. Fill in your module and build variant once. Every task and flag was checked in a real AGP 9.5 project on Gradle 9.6.',
-  tool: { name: 'Gradle and the Android Gradle plugin', version: 'Gradle 9.6.0, AGP 9.5.0', checkedOn: '2026-11-07', docs: AGP },
+    'The ./gradlew commands Android developers use every day, grouped by task. Fill in your module and build variant once. Every task and flag was checked in a real AGP 9.5.1 project on Gradle 9.6.',
+  tool: { name: 'Gradle and the Android Gradle plugin', version: 'Gradle 9.6.0, AGP 9.5.1', checkedOn: '2026-11-08', docs: AGP },
   variables: [
     { key: 'module', label: 'Module', example: 'app' },
     { key: 'variant', label: 'Build variant', example: 'debug' },

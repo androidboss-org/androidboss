@@ -64,7 +64,7 @@ Then ask it something like *"Retrace this crash with app/build/outputs/mapping/r
 ```sh
 npx androidboss tools
 npx androidboss retrace --mapping @app/build/outputs/mapping/release/mapping.txt < crash.txt
-npx androidboss check-compatibility --kotlin 2.4.0 --agp 9.5.0 --gradle 9.6.0
+npx androidboss check-compatibility --kotlin 2.4.0 --agp 9.5.1 --gradle 9.6.0
 ```
 
 ## Tools
@@ -245,13 +245,13 @@ npx androidboss android-permissions --names CAMERA,ACCESS_FINE_LOCATION --manife
 
 | Component | Version |
 |---|---|
-| `androidboss` CLI on npm | 0.4.0 |
-| MCP server | 0.4.0, MCP spec `2026-07-28` with a fallback for 2025 clients |
+| `androidboss` CLI on npm | 0.4.1 |
+| MCP server | 0.4.1, MCP spec `2026-07-28` with a fallback for 2025 clients |
 | Node.js | 26 LTS recommended. Minimum 22.23.4; on the 24 line use 24.22.1 or newer, which include the [October 2026 security fixes](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases) |
 | Android CLI commands | Checked against Android CLI 1.1.16717390 (2 November 2026) |
-| Kotlin, AGP and Gradle compatibility data | Copied from the official tables on 3 November 2026 |
+| Kotlin, AGP and Gradle compatibility data | Copied from the official tables, re-checked 8 November 2026 |
 | Newest library and plugin versions | 2,225 Google Maven artifacts, 108 Maven Central libraries and 26 Gradle plugins, read from the repositories on 8 November 2026 (`npm run update:latest -w @androidboss/data`) |
-| Cheatsheets | 282 entries in 9 sheets. Commands checked against adb 37.0.1 (Android 17 emulator), Gradle 9.6 with AGP 9.5, emulator 37, build-tools 36.1.0, Android CLI 1.1.16717390 and Xcode 27; Kotlin snippets compiled with kotlinx.coroutines 1.11; keep rules run through R8; KMP Gradle snippets configured with Kotlin 2.4.21 and AGP 9.5 (7–8 November 2026) |
+| Cheatsheets | 282 entries in 9 sheets. Commands checked against adb 37.0.1 (Android 17 emulator), Gradle 9.6 with AGP 9.5.1, emulator 37, build-tools 36.1.0, Android CLI 1.1.16717390 and Xcode 27; Kotlin snippets compiled with kotlinx.coroutines 1.11; keep rules run through R8; KMP Gradle snippets configured with Kotlin 2.4.21 and AGP 9.5.1 (8 November 2026) |
 
 Each release is listed with its changes on the [Releases](https://github.com/androidboss-org/androidboss/releases) page.
 

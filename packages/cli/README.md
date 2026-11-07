@@ -15,7 +15,7 @@ npx androidboss tools
 npx androidboss retrace --mapping @app/build/outputs/mapping/release/mapping.txt < crash.txt
 
 # Check Kotlin, AGP and Gradle work together before you bump them
-npx androidboss check-compatibility --kotlin 2.4.0 --agp 9.5.0 --gradle 9.6.0
+npx androidboss check-compatibility --kotlin 2.4.0 --agp 9.5.1 --gradle 9.6.0
 
 # Kotlin data classes from a JSON sample
 npx androidboss json-to-kotlin --root-name User < user.json
