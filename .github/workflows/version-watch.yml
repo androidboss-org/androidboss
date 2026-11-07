@@ -51,6 +51,7 @@ jobs:
           npm run check
 
       - name: Open or update the data pull request
+        id: pr
         if: steps.data.outputs.changes != '0'
         run: |
           git config user.name 'github-actions[bot]'
@@ -59,19 +60,29 @@ jobs:
           git commit -am "Refresh newest versions and KMP libraries ($(date -u +%F))"
           git push --force origin "$BRANCH"
           if [ -z "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
+            # Needs "Allow GitHub Actions to create and approve pull requests" in the
+            # repository's Actions settings; without it the issue links the branch instead.
             gh pr create --head "$BRANCH" --title 'Refresh newest versions and KMP libraries' \
-              --body "Weekly refresh from Maven Central, Google Maven and the Gradle Plugin Portal. Unit tests and type checks passed in the [version watch run]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID). Before merging, run \`npm run test:gradle -w @androidboss/data\` locally to resolve the new versions with Gradle."
+              --body "Weekly refresh from Maven Central, Google Maven and the Gradle Plugin Portal. Unit tests and type checks passed in the [version watch run]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID). Before merging, run \`npm run test:gradle -w @androidboss/data\` locally to resolve the new versions with Gradle." \
+              || echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Compare toolchains
         run: npm run --silent watch:versions -w @androidboss/data -- --json > watch.json
 
       - name: Open, update or close the version-watch issue
+        env:
+          DATA_BRANCH: ${{ steps.pr.outputs.branch }}
         run: |
           gh label create version-watch --color 0e8a16 --description 'New tool versions to adopt' 2>/dev/null || true
           issue=$(gh issue list --label version-watch --state open --json number --jq '.[0].number')
           outdated=$(jq -r '.outdated | join(", ")' watch.json)
           jq -r .markdown watch.json > body.md
+          if [ -n "$DATA_BRANCH" ]; then
+            outdated="${outdated:+$outdated, }library data"
+            printf '\n\n### Library data\nRefreshed and tested on [`%s`](%s/%s/compare/main...%s); open a pull request from it, run `npm run test:gradle -w @androidboss/data`, and merge.\n' \
+              "$DATA_BRANCH" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$DATA_BRANCH" >> body.md
+          fi
           printf '\n\n_Updated by the [version watch run](%s/%s/actions/runs/%s)._\n' "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" >> body.md
           if [ -n "$outdated" ]; then
             if [ -n "$issue" ]; then
