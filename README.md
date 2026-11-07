@@ -41,6 +41,7 @@ Every tool's output is checked against the real toolchain before it ships: R8 an
 - [Tools](#tools)
 - [Connect your agent](#connect-your-agent)
 - [Command-line usage](#command-line-usage)
+- [Versions](#versions)
 - [Privacy and limits](#privacy-and-limits)
 - [How it's built](#how-its-built)
 - [Development](#development)
@@ -58,7 +59,7 @@ claude mcp add --transport http androidboss https://mcp.androidboss.org/mcp
 
 Then ask it something like *"Retrace this crash with app/build/outputs/mapping/release/mapping.txt"* or *"Can I move to AGP 9.5 with my current Gradle version?"*
 
-**Or run the tools yourself** (Node.js 22 or newer):
+**Or run the tools yourself** (Node.js 22.23.4 or newer; 26 LTS recommended):
 
 ```sh
 npx androidboss tools
@@ -236,6 +237,18 @@ npx androidboss find-kmp-libraries --category networking --targets android,ios
 npx androidboss android-permissions --names CAMERA,ACCESS_FINE_LOCATION --manifest @app/src/main/AndroidManifest.xml
 ```
 
+## Versions
+
+| Component | Version |
+|---|---|
+| `androidboss` CLI on npm | 0.1.3 |
+| MCP server | 0.1.3, MCP spec `2026-07-28` with a fallback for 2025 clients |
+| Node.js | 26 LTS recommended. Minimum 22.23.4; on the 24 line use 24.22.1 or newer, which include the [October 2026 security fixes](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases) |
+| Android CLI commands | Checked against Android CLI 1.1.16717390 (2 November 2026) |
+| Kotlin, AGP and Gradle compatibility data | Copied from the official tables on 3 November 2026 |
+
+Each release is listed with its changes on the [Releases](https://github.com/androidboss-org/androidboss/releases) page.
+
 ## Privacy and limits
 
 - **Nothing is stored.** The hosted server handles each request in memory and keeps no database; request bodies aren't logged. The CLI runs entirely on your machine.
@@ -261,7 +274,7 @@ Correctness comes from fixtures produced by the real tools. For example, `packag
 
 ## Development
 
-You need [Node.js](https://nodejs.org/) 22.23 or newer.
+You need [Node.js](https://nodejs.org/) 26 LTS (the version in `.nvmrc`; with nvm, run `nvm use`). Node 22.23.4 or newer also works.
 
 ```sh
 git clone https://github.com/androidboss-org/androidboss.git

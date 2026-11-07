@@ -2,7 +2,7 @@
 
 The tools from [androidboss.info](https://androidboss.info/) in your terminal, and as a local MCP server for your coding agent. Everything runs on your machine: nothing is uploaded, and there are no rate limits.
 
-Needs Node.js 22 or newer. One file, no dependencies.
+Needs Node.js 22.23.4 or newer (26 LTS recommended). One file, no dependencies.
 
 ```sh
 npx androidboss tools
