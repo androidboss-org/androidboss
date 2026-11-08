@@ -316,7 +316,7 @@ CHECK_GRADLE=1 npm test -w @androidboss/core
 
 ## Contributing
 
-Bug reports, fixes and new tools are welcome. For questions, ideas and show-and-tell, use [GitHub Discussions](https://github.com/androidboss-org/androidboss/discussions).
+Bug reports, fixes and new tools are welcome. For questions, ideas and show-and-tell, use [GitHub Discussions](https://github.com/androidboss-org/androidboss/discussions). The [contributing guide](.github/CONTRIBUTING.md) has the details, and everyone taking part follows the [Code of Conduct](.github/CODE_OF_CONDUCT.md).
 
 1. **Open an issue first** for anything bigger than a small fix, so we can agree on the approach. For a wrong result, include the input, the output you expected and the tool that produced it.
 2. **Keep tools deterministic and read-only.** The same input must give the same output, with no network calls.
@@ -331,7 +331,7 @@ Each release has a `vX.Y.Z` tag matching the version in `packages/cli/package.js
 
 ### Security
 
-Please don't report security problems in public issues. Use [private vulnerability reporting](https://github.com/androidboss-org/androidboss/security/advisories/new) instead.
+Please don't report security problems in public issues. Use [private vulnerability reporting](https://github.com/androidboss-org/androidboss/security/advisories/new) instead; see the [security policy](.github/SECURITY.md).
 
 ## Support the project
 

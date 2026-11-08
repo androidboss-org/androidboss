@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or help using AndroidBoss
+    url: https://github.com/androidboss-org/androidboss/discussions/categories/q-a
+    about: Ask in Discussions, where answers help the next person too.
+  - name: Idea or show and tell
+    url: https://github.com/androidboss-org/androidboss/discussions
+    about: Share ideas, setups and what you built with AndroidBoss.
+  - name: Security vulnerability
+    url: https://github.com/androidboss-org/androidboss/security/advisories/new
+    about: Report it privately, not in a public issue.
+  - name: Trademark or legal concern
+    url: https://androidboss.info/legal/
+    about: Email legal@androidboss.info; we reply within 7 days.

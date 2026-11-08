@@ -1,0 +1,33 @@
+name: New tool or improvement
+description: Suggest a new tool, cheatsheet entry or a change to an existing one.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Not sure yet? Start a thread in [Ideas](https://github.com/androidboss-org/androidboss/discussions/categories/ideas) first.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The Android or Kotlin Multiplatform task, and where you or your agent get stuck today.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would help?
+      description: The tool, input and output you have in mind, or the cheatsheet entry with its command.
+    validations:
+      required: true
+  - type: textarea
+    id: check
+    attributes:
+      label: How could it be checked?
+      description: AndroidBoss checks every answer against the real toolchain. Which official tool, docs or table would prove the output is right?
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contributing
+      options:
+        - label: I'd like to open a pull request for this.

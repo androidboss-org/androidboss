@@ -1,0 +1,60 @@
+name: Wrong result or bug
+description: A tool gave a wrong answer, failed, or the CLI or MCP server misbehaved.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please don't paste secrets, signing passwords or private code. Security problems go through [private vulnerability reporting](https://github.com/androidboss-org/androidboss/security/advisories/new).
+  - type: dropdown
+    id: tool
+    attributes:
+      label: Tool
+      options:
+        - retrace json_to_kotlin check_compatibility android_cli_tasks android_cli_command crash_to_prompt version_catalog convert_vector keep_rules expect_actual kotlin_to_swift cheatsheet find_kmp_libraries android_permissions target_sdk_changes
+        - Something else (say which below)
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where did you run it?
+      options:
+        - Hosted MCP server (androidboss.info/mcp or mcp.androidboss.org/mcp)
+        - Local CLI or stdio server (npx androidboss)
+        - Browser tool on androidboss.info
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: "`npx androidboss --version`, or the server version your agent shows."
+      placeholder: 0.4.2
+  - type: textarea
+    id: input
+    attributes:
+      label: Input
+      description: The smallest input that still shows the problem.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What you got
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      description: If you can, link official docs or paste the output of the real tool (retrace, Gradle, adb…) and its version.
+    validations:
+      required: true
+  - type: input
+    id: agent
+    attributes:
+      label: Agent or client (if relevant)
+      placeholder: Claude Code, Codex, Cursor, VS Code…
